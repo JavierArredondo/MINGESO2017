@@ -47,6 +47,7 @@ template {
 }
 a {
   background-color: transparent;
+  color:black;
 }
 a:active,
 a:hover {
@@ -58,6 +59,7 @@ abbr[title] {
 b,
 strong {
   font-weight: bold;
+  color:black;
 }
 dfn {
   font-style: italic;
