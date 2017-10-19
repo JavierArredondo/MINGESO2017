@@ -1,7 +1,7 @@
 package Grupo6_TMingueso.Tingeso.models;
 
 import java.io.*;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by mario on 17-10-17.
@@ -27,7 +27,7 @@ public class Python {
 
             System.out.println("Program Output: \n");
             String out;
-            List<String> outputs = null;
+            List<String> outputs = new ArrayList<String>();
             while ((out = output.readLine()) != null) {
                 outputs.add(out);
                 System.out.println(out);
@@ -35,7 +35,7 @@ public class Python {
 
             System.out.println("Program Errors (if any):\n");
             String err;
-            List<String> errors = null;
+            List<String> errors = new ArrayList<String>();
             while ((err = error.readLine()) != null) {
                 errors.add(err);
                 System.out.println(err);
