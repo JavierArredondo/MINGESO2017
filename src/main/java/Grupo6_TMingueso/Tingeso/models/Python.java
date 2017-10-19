@@ -10,6 +10,7 @@ public class Python {
     private String code;
     private List<String> output;
     private List<String> error;
+    private int statusCode;
 
 
 
@@ -83,5 +84,13 @@ public class Python {
 
     public void setError(List<String> error) {
         this.error = error;
+    }
+
+    public int getStatusCode() {
+        return statusCode;
+    }
+
+    public void setStatusCode(int statusCode) {
+        this.statusCode = statusCode;
     }
 }

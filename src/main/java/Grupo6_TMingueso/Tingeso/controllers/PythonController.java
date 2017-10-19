@@ -20,9 +20,13 @@ public class PythonController {
 
     @RequestMapping(value = "/code", method = RequestMethod.POST)
     public ResponseEntity<Python> compileCode(@RequestBody Python code){
-        System.out.println("Entro");
-        System.out.println("Code: "+code.getCode());
         code.compileCode();
+        if(code.getError().size() == 0){
+            code.setStatusCode(1);
+        }
+        else{
+            code.setStatusCode(0);
+        }
         return new ResponseEntity<Python>(code, HttpStatus.OK);
     }
 }
