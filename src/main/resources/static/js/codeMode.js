@@ -1,6 +1,6 @@
-var myCodeMirror = CodeMirror(document.body, {
+var myCodeMirror = CodeMirror.fromTextArea(document.getElementById('CodeContainer'), {
     mode: "python",
     lineNumbers: true,
-    value: "for(i=0; i < caca; i++)",
     theme: "base16-light"
-});
+}).setValue("Escriba aquí su código ...");
+
