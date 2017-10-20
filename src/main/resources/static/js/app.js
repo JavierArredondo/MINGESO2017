@@ -4,14 +4,10 @@ app.config(function($routeProvider){
     $routeProvider
         .when('/login',{
                     templateUrl: 'js/views/login.html',
-                    controller: 'LoginController'
-        })
-        .when('/homeTeacher',{
-                    templateUrl: 'js/views/Teacher/homeTeacher.html',
-                    controller: 'homeTeacherController'
+                    controller: 'loginController'
         })
         .when('/homeStudent',{
-                    templateUrl: 'js/views/Srudent/homeStudent.html',
+                    templateUrl: 'js/views/student/home.html',
                     controller: 'homeStudentController'
         })
         .otherwise({

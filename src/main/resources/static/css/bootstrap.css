@@ -5004,6 +5004,11 @@ a.badge:focus {
   }
 }
 .thumbnail {
+  filter: alpha(opacity=25);
+  height: auto;
+  -moz-opacity: 0.3;
+  opacity: 0.9;
+  -khtml-opacity: 0.3;
   display: block;
   padding: 4px;
   margin-bottom: 20px;
