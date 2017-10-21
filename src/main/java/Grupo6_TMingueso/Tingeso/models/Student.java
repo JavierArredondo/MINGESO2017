@@ -26,10 +26,10 @@ public class Student {
     @NotNull
     private String password;
 
-    @NotNull
+
     private Integer total_spend_time;
 
-    @NotNull
+
     private Integer total_wordings;
 
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
