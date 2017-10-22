@@ -7,19 +7,21 @@
         <link rel="stylesheet" type="text/css" href="../../codemirror/theme/base16-light.css">
 
     </head>
-    <body>
+    <body ng-app="codingview" ng-controller="codingViewController" >
 
         <h1>asdfsadg</h1>
         <div>
-            <textarea id="CodeContainer"></textarea>
+            <ui-codemirror ui-codemirror-opts="myCodeMirrorOptions" ng-model="value"></ui-codemirror>
         </div>
-        <button type="button" onclick="printCode()">Enviar</button>
+        <button type="button" ng-click="sendCode()">Enviar</button>
 
 <!-- Javascript -->
+        <script type="text/javascript" src="../shared/angular.js"></script>
         <script type="text/javascript" src="../shared/jquery.js"></script>
         <script type="text/javascript" src="../../codemirror/lib/codemirror.js"></script>
         <script type="text/javascript" src="../../codemirror/mode/python/python.js"></script>
-        <script type="text/javascript" src="../codeMode.js"></script>
+        <script type="text/javascript" src="../lib/ui-codemirror.js"></script>
+        <script type="text/javascript" src="../controller/codingViewController.js"></script>
 
     </body>
 </html>
