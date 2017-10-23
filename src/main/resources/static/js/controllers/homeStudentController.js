@@ -1,6 +1,11 @@
 app.controller('homeStudentController', ['$scope','$http', function($scope,$http) {
+
+    $scope.title = "Home - Estudiante"
+
+    $scope.loginStudent = $location.path() === '/student/home';
+
     $scope.navigation = [
-	    {"text":"Iniciar sesión",   "link":"#!/login", "condition": $scope.login}
+	    {"text":"Cerrar sesion",   "link":"#!/login", "condition": $scope.loginStudent}
 	];
 
 }]);
