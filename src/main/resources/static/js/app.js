@@ -10,13 +10,21 @@ app.config(function($routeProvider){
                     templateUrl: 'js/views/student/home.html',
                     controller: 'homeStudentController'
         })
-        .when('/student/exercise',{
+        .when('/student/exercises',{
                     templateUrl: 'js/views/student/exercises.html',
                     controller: 'exerciseStudentController'
         })
         .when('/teacher/home',{
                     templateUrl: 'js/views/teacher/home.html',
                     controller: 'homeTeacherController'
+        })
+        .when('/teacher/newStudent',{
+                    templateUrl: 'js/views/teacher/newStudent.html',
+                    controller: 'newStudentController'
+        })
+        .when('/teacher/newExercise',{
+                    templateUrl: 'js/views/teacher/newExercise.html',
+                    controller: 'newExerciseController'
         })
         .otherwise({
             redirectTo: '/index'
