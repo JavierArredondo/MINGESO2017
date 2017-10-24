@@ -1,4 +1,4 @@
-var app = angular.module('Myapp',['ngRoute', 'ui.codemirror']);
+var app = angular.module('Myapp',['ngRoute']);
 
 app.config(function($routeProvider){
     $routeProvider
@@ -9,14 +9,6 @@ app.config(function($routeProvider){
         .when('/teacher/home',{
                     templateUrl: 'js/views/teacher/home.html',
                     controller: 'loginController'
-        })
-        .when('/teacher/exercises',{
-            templateUrl: 'js/views/teacher/exercises.html',
-            controller: 'homeTeacherController'
-        })
-        .when('/student/coding',{
-            templateUrl: 'js/views/student/coding.html',
-            controller: 'codingViewController'
         })
         .when('/student/home',{
                     templateUrl: 'js/views/student/home.html',

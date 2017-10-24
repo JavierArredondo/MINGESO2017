@@ -38,7 +38,7 @@ public class StudentController {
         nue.setEmail(student.getEmail());
         nue.setRut(student.getRut());
         nue.setPassword(student.getPassword());
-        nue.setCoordination(student.getCoordination());
+        //nue.setCoordination(student.getCoordination());
 
         studentRepository.save(nue);
         return 1;

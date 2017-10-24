@@ -1,10 +1,6 @@
-app.controller('homeStudentController', ['$scope','$http','$location', function($scope,$http,$location) {
+app.controller('homeStudentController', ['$scope','$http', function($scope,$http) {
 
     $scope.title = "Home - Estudiante"
-
-    $scope.go = function ( path ) {
-        $location.path( path );
-    };
 
     $scope.loginStudent = $location.path() === '/student/home';
 
