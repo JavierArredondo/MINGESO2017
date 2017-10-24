@@ -10,6 +10,10 @@ app.config(function($routeProvider){
                     templateUrl: 'js/views/teacher/home.html',
                     controller: 'loginController'
         })
+        .when('/student/coding',{
+            templateUrl: 'js/views/student/coding.html',
+            controller: 'codingViewController'
+        })
         .when('/student/home',{
                     templateUrl: 'js/views/student/home.html',
                     controller: 'homeStudentController'
