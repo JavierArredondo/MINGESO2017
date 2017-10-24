@@ -1,0 +1,48 @@
+<html ng-app="Myapp" ng-controller="homeTeacherController">
+
+<div class = "container">
+    <div class="jumbotron jumbotron-fluid">
+        <h1>Sube nuevos enunciados a tus alumnos</h1>
+        <p> Agrega los nuevo enunciados diabolicos jejeje!!! </p>
+        <p><a class="btn btn-primary btn-lg" href="#!/teacher/newExercise" role="button">Vamos</a></p>
+    </div>
+</div>
+
+<div class = "container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="https://image.flaticon.com/icons/svg/236/236834.svg" alt="..." width="200" height="200">
+                <div class="caption">
+                    <h3>Mis cursos</h3>
+                    <p> Revisa la lista de tus cursos y sus malas notas !  </p>
+                    <p><a href="#" class="btn btn-primary" role="button">Button</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="https://image.flaticon.com/icons/svg/236/236822.svg" alt="..." width="200" height="200">
+                <div class="caption">
+                    <h3>Nuevo alumno</h3>
+                    <p> Agrega a una nueva victima jejeje!</p>
+                    <p><a href="#!/teacher/newStudent" class="btn btn-primary" role="button">Button</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="https://image.flaticon.com/icons/svg/236/236829.svg" alt="..." width="200" height="200">
+                <div class="caption">
+                    <h3> Avance ejercicios </h3>
+                    <p> Chequea tu perfil ! </p>
+                    <p><a ng-click="go('/teacher/exercises')" class="btn btn-primary" role="button">Button</a></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
