@@ -1,6 +1,5 @@
-var codingview = angular.module('codingview',['ui.codemirror']);
 
-codingview.controller('codingViewController', ['$scope', '$http', function ($scope, $http) {
+app.controller('codingViewController', ['$scope', '$http', function ($scope, $http) {
 
     $scope.myCodeMirrorOptions = {
         mode: "python",

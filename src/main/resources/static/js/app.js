@@ -1,4 +1,4 @@
-var app = angular.module('Myapp',['ngRoute']);
+var app = angular.module('Myapp',['ngRoute', 'ui.codemirror']);
 
 app.config(function($routeProvider){
     $routeProvider
