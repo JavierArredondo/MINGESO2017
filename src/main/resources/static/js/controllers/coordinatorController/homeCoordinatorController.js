@@ -1,4 +1,4 @@
-app.controller('homeStudentController', ['$scope','$http','$location', function($scope,$http,$location) {
+app.controller('homeCoordinatorController', ['$scope','$http','$location', function($scope,$http,$location) {
 
     $scope.title = "Home - Coordinador"
 

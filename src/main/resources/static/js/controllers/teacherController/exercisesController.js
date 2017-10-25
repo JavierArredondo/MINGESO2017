@@ -1,4 +1,4 @@
-app.controller('homeTeacherController', ['$scope','$http','$location', function($scope,$http,$location) {
+app.controller('exercisesController', ['$scope','$http','$location', function($scope,$http,$location) {
     $scope.title = "Home - Profesor"
 
     $scope.go = function ( path ) {

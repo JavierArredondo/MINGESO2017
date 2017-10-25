@@ -27,14 +27,9 @@ app.config(function($routeProvider){
                     controller: 'homeTeacherController'
         })
 
-        .when('/teacher/courses',{
+        .when('/teacher/listCourses',{
                     templateUrl: 'js/views/teacher/listCourses.html',
                     controller: 'listCoursesController'
-        })
-
-        .when('/teacher/home',{
-                    templateUrl: 'js/views/teacher/homeTeacher.html',
-                    controller: 'loginController'
         })
 
         .when('/teacher/newStudent',{
@@ -49,7 +44,7 @@ app.config(function($routeProvider){
 
         //Coordinator
 
-        .when('/coordinator/newExercisesCoordinator',{
+        .when('/coordinator/newExercises',{
                     templateUrl: 'js/views/coordinator/newExercisesCoordinator.html',
                     controller: 'newExercisesCoordinatorController'
         })
@@ -67,6 +62,23 @@ app.config(function($routeProvider){
         .when('/coordinator/homeCoordinator',{
                     templateUrl: 'js/views/coordinator/home.html',
                     controller: 'homeCoordinatorController'
+        })
+
+        //Login
+
+        .when('/teacher/homeTeacher',{
+                    templateUrl: 'js/views/teacher/homeTeacher.html',
+                    controller: 'loginController'
+        })
+
+        .when('/student/homeStudent',{
+                    templateUrl: 'js/views/student/homeStudent.html',
+                    controller: 'loginController'
+        })
+
+        .when('/coordinator/homeCoordinator',{
+                    templateUrl: 'js/views/coordinator/homeCoordinator.html',
+                    controller: 'loginController'
         })
 
         //Other
