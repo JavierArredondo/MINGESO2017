@@ -24,7 +24,7 @@ public class ExerciseControllerTests {
 
     @Test
     public void CreateExerciseTest(){
-        // Insert
+        // Insert.
         assertThat(1)
                 .isEqualTo(1);
         /*
