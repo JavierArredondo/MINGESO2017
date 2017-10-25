@@ -13,6 +13,7 @@ app.controller('newStudentController', ['$scope','$http', function($scope,$http)
     		).then(function(data) {
     			$scope.msg = 'Estudiante Creado Correctamente';
     			//$scope.getStudents();
+                $scope.limpiar();
     		}).catch(function(data) {
     			$scope.msg = 'Se ha producido un error';
     		});
