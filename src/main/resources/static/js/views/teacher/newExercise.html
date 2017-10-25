@@ -9,8 +9,8 @@
                         <!-- First row: Name and lastname -->
                         <div class="form-group row">
                             <div class="col-md-12">
-                                <label> Nombre del enunciado </label>
-                                <input type="text" class="form-control" placeholder="José Miguel">
+                                <label for="title"> Nombre del enunciado </label>
+                                <input id="title" ng-model="title" type="text" class="form-control">
                             </div>
                         </div>
                         <!-- Second row: run and mail-->
@@ -25,21 +25,17 @@
                             </div>
                         </div>
                         <!-- Third row: career-->
-                        <label> Descripción del enunciado: </label>
+                        <label for="text"> Descripción del enunciado: </label>
                         <div class="form-group row">
                             <div class="col-md-12">
-                                <textarea class="form-control" rows="10" cols="50" > jhjhjhkjhkh </textarea>
-                            </div>
-
-                            <div class="col-md-12">
-                                <textarea class="form-control" rows="10" cols="50" > jhjhjhkjhkh </textarea>
+                                <textarea id="text" ng-model="text" class="form-control" rows="10" cols="50" ></textarea>
                             </div>
 
                         </div>
                         <!-- -->
                     </div>
                     <div class="panel-footer">
-                        <input class="btn btn-primary" type="button" value="Ingresar información">
+                        <input type="submit" ng-click="addExercise()" class="btn btn-primary" type="button" value="Agregar Enunciado">
                     </div>
                 </div>
             </form>

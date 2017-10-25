@@ -30,17 +30,17 @@ public class StudentController {
 
 
     //method post that add student
-    // url of method is localhost:1414/new , in case that port is 1414, if not change in aplication.properties
+    // url of method is localhost:1919/new , in case that port is 1919, if not change in aplication.properties
     @RequestMapping(path ="/new",method = RequestMethod.POST)
     public Integer CreateStudent(@RequestBody Student student){
-        Student nue = new Student();
-        nue.setName(student.getName());
-        nue.setEmail(student.getEmail());
-        nue.setRut(student.getRut());
-        nue.setPassword(student.getPassword());
+        //Student nue = new Student();
+        //nue.setName(student.getName());
+        //nue.setEmail(student.getEmail());
+        //nue.setRut(student.getRut());
+        //nue.setPassword(student.getPassword());
         //nue.setCoordination(student.getCoordination());
 
-        studentRepository.save(nue);
+        studentRepository.save(student);
         return 1;
 
     }
