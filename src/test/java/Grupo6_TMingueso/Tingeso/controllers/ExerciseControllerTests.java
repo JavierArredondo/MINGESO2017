@@ -34,7 +34,7 @@ public class ExerciseControllerTests {
         entityManager.flush();
 
         // Search.
-        Exercise found = sRepo.findByName(test.getTitle());
+        Exercise found = Repo.findByName(test.getTitle());
         System.out.println("+++++++++++TEST CREATE EXERCISE++++++++++++");
         System.out.println("Title: "+found.getTitle());
         System.out.println("Text: "+found.getText());
