@@ -23,4 +23,9 @@ public class ExerciseController {
         return 1;
     }
 
+    @GetMapping(path = "/all")
+    public @ResponseBody Iterable<Exercise> getAllExercise(){
+        return exerciseRepository.findAll();
+    }
+
 }
