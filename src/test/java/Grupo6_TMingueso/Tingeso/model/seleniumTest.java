@@ -21,20 +21,18 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class seleniumTest {
- //
+
     /*private WebDriver driver;
-    private Capabilities chromeCapabilities = DesiredCapabilities.chrome();
 
     @Before
     public void setUp() throws Exception,MalformedURLException{
 
-        driver = new RemoteWebDriver(new URL("http://207.154.197.207:4444//wd/hub") , chromeCapabilities) ;
         //DesiredCapabilities capabilities = DesiredCapabilities.firefox();
         //capabilities.setBrowserName("chrome");
         //capabilities.setPlatform(Platform.LINUX);
         //driver = new RemoteWebDriver(new URL("http://192.168.99.100:4444/wd/hub"), capabilities);
-        //driver = new FirefoxDriver();
-        //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver = new FirefoxDriver();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
     @Test

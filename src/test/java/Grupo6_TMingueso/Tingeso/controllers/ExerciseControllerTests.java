@@ -1,8 +1,12 @@
 package Grupo6_TMingueso.Tingeso.controllers;
 
+import Grupo6_TMingueso.Tingeso.models.Student;
+import org.junit.Assert;
 import org.junit.Test;
+import Grupo6_TMingueso.Tingeso.models.Exercise;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -15,41 +19,55 @@ import Grupo6_TMingueso.Tingeso.repository.repo.ExerciseRepo;
  */
 @DataJpaTest
 public class ExerciseControllerTests {
+
     @Autowired
     private TestEntityManager entityManager;
 
     @Autowired
-    private ExerciseRepo Repo;
-
+    private ExerciseController Repo;
 
     @Test
     public void CreateExerciseTest(){
-        // Insert.
-        assertThat(1)
-                .isEqualTo(1);
-        /*
+
         Exercise test = new Exercise();
         test.setTitle("New Exercise");
         test.setText("Try and solve this very hard problem");
         test.setAnswer("one");
 
+        Assert.assertNotNull(test);
+    }
 
-        System.out.println(test);
-        System.out.println("AAAAAA");
-        entityManager.persist(test);
-        entityManager.flush();
+    @Test
+    public void NewStudent(){
 
-        // Search.
-        Exercise found = Repo.findByName(test.getTitle());
-        System.out.println("+++++++++++TEST CREATE EXERCISE++++++++++++");
-        System.out.println("Title: "+found.getTitle());
-        System.out.println("Text: "+found.getText());
-        System.out.println("Answer: "+found.getText());
-        System.out.println("++++++++++++++++++++++++++++++++++++++++++");
+        Student student = new Student();
+        student.setEmail("estudiante1@gmail.com");
+        student.setLastName("Estudiante");
+        student.setName("Hola");
+        student.setRut("123456789");
+        student.setPassword("lalallaa");
 
-        // Assert
-        assertThat(found.getTitle())
-                .isEqualTo(test.getTitle());
-    */}
+        Assert.assertNotNull(student);
+    }
+
+    @Test
+    public void NewExercisesAndNewStudent(){
+
+        Student student = new Student();
+        student.setEmail("estudiante1@gmail.com");
+        student.setLastName("Estudiante");
+        student.setName("Hola");
+        student.setRut("123456789");
+        student.setPassword("lalallaa");
+
+        Assert.assertNotNull(student);
+
+        Exercise test = new Exercise();
+        test.setTitle("New Exercise");
+        test.setText("Try and solve this very hard problem");
+        test.setAnswer("one");
+
+        Assert.assertNotNull(test);
+    }
 
 }
