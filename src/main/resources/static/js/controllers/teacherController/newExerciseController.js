@@ -5,13 +5,13 @@ app.controller('newExerciseController', ['$scope','$http', function($scope,$http
             var d = {
                 "answer": $scope.answer,
                 "text": $scope.text,
-                "title": $scope.title
+                "title": $scope.otro
             }
             console.log(d);
     		$http.post('http://localhost:1919/exercise/new', d)
             .then(function(data) {
     			window.alert("Se agregó correctamente el enunciado.");
-    			$scope.title = "";
+    			$scope.otro = "";
     			$scope.text = "";
                 $scope.answer = "";
     		}).catch(function(data) {
