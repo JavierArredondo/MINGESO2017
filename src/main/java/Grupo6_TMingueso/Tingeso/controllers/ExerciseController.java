@@ -18,7 +18,7 @@ public class ExerciseController {
     // url of method is localhost:1919/new , in case that port is 1919, if not change in aplication.properties
     @RequestMapping(path ="/new",method = RequestMethod.POST)
     public Integer CreateExercise(@RequestBody Exercise exercise){
-        exercise.setAnswer("hay que cambiar esto.");
+        //exercise.setAnswer("hay que cambiar esto.");
         exerciseRepository.save(exercise);
         return 1;
     }

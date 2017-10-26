@@ -20,7 +20,7 @@ import static org.junit.Assert.assertThat;
 public class seleniumTest {
 
     private WebDriver driver;
-
+    /*
     @Before
     public void setUp() throws Exception,MalformedURLException{
 
@@ -66,9 +66,10 @@ public class seleniumTest {
             System.out.println("No son iguales");
         }
     }*/
-
+    /*
     @After
     public void tearDown() throws Exception {
         this.driver.quit();
     }
+    */
 }

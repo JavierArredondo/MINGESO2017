@@ -39,7 +39,7 @@ public class StudentController {
         //nue.setRut(student.getRut());
         //nue.setPassword(student.getPassword());
         //nue.setCoordination(student.getCoordination());
-
+        //student.setLastName("Leroy");   
         studentRepository.save(student);
         return 1;
 

@@ -21,6 +21,9 @@ public class Student {
     private String name;
 
     @NotNull
+    private String lastName;
+
+    @NotNull
     private String email;
 
     @NotNull
@@ -84,6 +87,16 @@ public class Student {
     public void setName(String name)
     {
         this.name= name;
+    }
+
+    public String getLastName()
+    {
+        return lastName;
+    }
+
+    public void setLastName(String lastName)
+    {
+        this.lastName= lastName;
     }
 
     public String getEmail(){return email;}
