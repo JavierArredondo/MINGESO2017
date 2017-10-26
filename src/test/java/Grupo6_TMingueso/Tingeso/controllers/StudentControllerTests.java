@@ -3,6 +3,8 @@ package Grupo6_TMingueso.Tingeso.controllers;
 /**
  * Created by mario on 25-10-17.
  */
+import Grupo6_TMingueso.Tingeso.models.Exercise;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,4 +18,15 @@ import Grupo6_TMingueso.Tingeso.repository.StudentRepository;
 
 
 public class StudentControllerTests {
+
+    @Test
+    public void CreateExerciseTest(){
+
+        Exercise test = new Exercise();
+        test.setTitle("New Exercise");
+        test.setText("Try and solve this very hard problem");
+        test.setAnswer("one");
+
+        Assert.assertNotNull(test);
+    }
 }
