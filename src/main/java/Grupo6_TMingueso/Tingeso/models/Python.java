@@ -1,8 +1,10 @@
 package Grupo6_TMingueso.Tingeso.models;
 
 import java.io.*;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
-
+import java.nio.file.Files;
 /**
  * Created by mario on 17-10-17.
  */
@@ -16,11 +18,25 @@ public class Python {
     //,
     public void compileCode(){
         try{
-            BufferedWriter file = new BufferedWriter(new FileWriter("pythonCode.py"));
+            File theDir = new File("python");
+            if (!theDir.exists()) {
+                System.out.println("creating directory: " + theDir.getName());
+                boolean result = false;
+                try{
+                    theDir.mkdir();
+                    result = true;
+                }
+                catch(SecurityException se){
+                }
+                if(result) {
+                    System.out.println("DIR created");
+                }
+            }
+            BufferedWriter file = new BufferedWriter(new FileWriter("python/pythonCode.py"));
             file.write(this.getCode());
             file.close();
 
-            ProcessBuilder builder = new ProcessBuilder("python","pythonCode.py");
+            ProcessBuilder builder = new ProcessBuilder("python","python/pythonCode.py");
             Process compiler = builder.start();
 
             BufferedReader output = new BufferedReader(new InputStreamReader(compiler.getInputStream()));
