@@ -3,7 +3,7 @@ package Grupo6_TMingueso.Tingeso.controllers;
 /**
  * Created by mario on 25-10-17.
  */
-import Grupo6_TMingueso.Tingeso.models.Exercise;
+import Grupo6_TMingueso.Tingeso.models.Student;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,13 +20,15 @@ import Grupo6_TMingueso.Tingeso.repository.StudentRepository;
 public class StudentControllerTests {
 
     @Test
-    public void CreateExerciseTest(){
+    public void NewStudent(){
 
-        Exercise test = new Exercise();
-        test.setTitle("New Exercise");
-        test.setText("Try and solve this very hard problem");
-        test.setAnswer("one");
+        Student student = new Student();
+        student.setEmail("estudiante1@gmail.com");
+        student.setLastName("Estudiante");
+        student.setName("Hola");
+        student.setRut("123456789");
+        student.setPassword("lalallaa");
 
-        Assert.assertNotNull(test);
+        Assert.assertNotNull(student);
     }
 }
