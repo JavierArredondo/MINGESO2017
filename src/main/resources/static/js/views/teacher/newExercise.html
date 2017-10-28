@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <form method="POST">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><h2>Nuevo Enunciado</h2></div>
+                    <div class="panel-body">
+                        <!-- Data of the student -->
+                        <!-- First row: Name and lastname -->
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <label for="otro"> Título del enunciado </label>
+                                <input id="otro" ng-model="otro" type="text" class="form-control" placeholder="Hola Mundo">
+                            </div>
+                        </div>
+                        <!-- Second row: run and mail-->
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <label> Fecha de entrega: </label>
+                                <input type="text" id = "rut" name = "rut" class="form-control" placeholder="31/12/2017">
+                            </div>
+                            <div class="col-md-6">
+                                <label> Hora de entrega: </label>
+                                <input type="text" id = "rut" name = "rut" class="form-control" placeholder="23:55">
+                            </div>
+                        </div>
+                        <!-- Third row: career-->
+                        <label for="text"> Descripción del enunciado: </label>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <textarea id="text" ng-model="text" class="form-control" rows="10" cols="50" placeholder="Realizar un hola mundo..."></textarea>
+                            </div>
+
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <label for="answer"> Respuesta: </label>
+                                <input id="answer" ng-model="answer" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <!-- -->
+                    </div>
+                    <div class="panel-footer">
+                        <input type="submit" ng-click="addExercise()" class="btn btn-primary" type="button" value="Agregar Enunciado">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
