@@ -81,6 +81,13 @@ app.config(function($routeProvider){
                     controller: 'loginController'
         })
 
+        //Administrator
+
+        .when('/administrator/homeAdmin',{
+                    templateUrl: 'js/views/administrator/homeAdmin.html',
+                    controller: 'homeAdministratorController'
+        })
+
         //Other
 
         .when('/login',{

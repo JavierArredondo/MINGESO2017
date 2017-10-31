@@ -47,6 +47,8 @@ public class ExerciseControllerTests {
         student.setRut("123456789");
         student.setPassword("lalallaa");
 
+
+
         Assert.assertNotNull(student);
     }
 
