@@ -49,6 +49,11 @@ app.config(function($routeProvider){
                     controller: 'newExercisesCoordinatorController'
         })
 
+        .when('/coordinator/newTeacher',{
+                    templateUrl: 'js/views/coordinator/newTeacher.html',
+                    controller: 'newTeacherController'
+        })
+
         .when('/coordinator/listTeacher',{
                     templateUrl: 'js/views/coordinator/listTeacher.html',
                     controller: 'listTeacherController'
