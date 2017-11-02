@@ -88,6 +88,21 @@ app.config(function($routeProvider){
                     controller: 'homeAdministratorController'
         })
 
+        .when('/administrator/listCoordinator',{
+                    templateUrl: 'js/views/administrator/listCoordinator.html',
+                    controller: 'listCoordinatorController'
+        })
+
+        .when('/administrator/listStudent',{
+                    templateUrl: 'js/views/administrator/listStudent.html',
+                    controller: 'listStudentController'
+        })
+
+        .when('/administrator/listTeacher',{
+                    templateUrl: 'js/views/administrator/listTeacher.html',
+                    controller: 'listTeacherController'
+        })
+
         //Other
 
         .when('/login',{
