@@ -3,6 +3,7 @@ package Grupo6_TMingueso.Tingeso.controllers;
 import Grupo6_TMingueso.Tingeso.models.Teacher;
 import Grupo6_TMingueso.Tingeso.repository.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +15,17 @@ public class TeacherController {
     @Autowired
     private TeacherRepository teacherRepository;
 
+    //Nota: el delete y el update son los mismo para coordinador y profesor
+    // pero el post y get son distintos estan especificados mas abajo, con la url respectiva
+
+    //metodo que retorna un teacher de acuerdo a su id
+    @GetMapping(path = "/{id}")
+    public @ResponseBody Teacher getTeacher(@PathVariable("id") Integer id){
+        long lid = id.longValue();
+        return teacherRepository.findOne(lid);
+        //return studentRepository.findOne(lid);
+    }
+
     //method get that extracts teachers from database
     //metodo get que extrae todos los profesores
     @GetMapping(path = "/allTeachers")
@@ -21,6 +33,27 @@ public class TeacherController {
     Iterable<Teacher> getAllTeachers(){
         return teacherRepository.findAll();
     }
+
+    //metodo get que extrae todos los coordinadores
+
+    @GetMapping(path = "/allCoordinares")
+    public @ResponseBody
+    Iterable<Teacher> getAllCoordinations(){
+
+        return teacherRepository.findAllByCustomQueryAndStream();
+    }
+
+    //metodo post que se encarga de crear coordinador
+
+    @RequestMapping(path ="/newCoordinator",method = RequestMethod.POST)
+    public Integer CreateCoordinator(@RequestBody Teacher coordinator){
+
+        coordinator.setIs_admin(true);
+        teacherRepository.save(coordinator);
+        return 1;
+
+    }
+
 
 
     //metodo post que se encarga de crear un nuevo profesores a base de datos
@@ -34,7 +67,7 @@ public class TeacherController {
     }
 
 
-    //metodo put que permite actualizar profesor
+    //metodo put que permite actualizar profesor y coordinador
     //localhost:1919/teacher/1
     //PUT para actualizar al profesor 1, con el siguiente json
     //{ "email": "nuevo@usach.cl", "password": "nuevaPass" }
@@ -52,7 +85,7 @@ public class TeacherController {
     }
 
 
-    //metodo delete, que permite eliminar un usuario del tipo profesor, con solo su id
+    //metodo delete, que permite eliminar un usuario del tipo profesor y coordinador, con solo su id
     //localhost:1919/teacher/1
     //la url de arriba borra el profesor con id 1
 
