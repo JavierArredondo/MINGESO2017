@@ -14,7 +14,7 @@ app.config(function($routeProvider){
                     templateUrl: 'js/views/student/homeStudent.html',
                     controller: 'homeStudentController'
         })
-        .when('/student/exercises',{
+        .when('/student/exercisesStudent',{
                     templateUrl: 'js/views/student/exercisesStudent.html',
                     controller: 'exerciseStudentController'
         })
@@ -91,6 +91,11 @@ app.config(function($routeProvider){
         .when('/administrator/homeAdmin',{
                     templateUrl: 'js/views/administrator/homeAdmin.html',
                     controller: 'homeAdministratorController'
+        })
+
+        .when('/administrator/newUser',{
+                    templateUrl: 'js/views/administrator/newUser.html',
+                    controller: 'newUserController'
         })
 
         .when('/administrator/listCoordinator',{

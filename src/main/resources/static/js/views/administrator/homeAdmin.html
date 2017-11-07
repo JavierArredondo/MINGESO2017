@@ -1,9 +1,9 @@
 
 <div class = "container">
     <div class="jumbotron jumbotron-fluid">
-        <h1>Nuevo usuario </h1>
-        <p>Agrega nuevos usuarios a la plataforma, ya sea un estudiante, profesor o coordinador.</p>
-        <p><a class="btn btn-success btn-lg" ng-click="go('/teacher/newExercise')" role="button">Agregar usuario</a></p>
+        <h1>Agregar nuevo usuario</h1>
+        <p> Agrega un nuevo usuario a la plataforma </p>
+        <p><a class="btn btn-success btn-lg" ng-click="go('/administrator/newUser')" role="button">Vamos</a></p>
     </div>
 </div>
 
@@ -15,7 +15,7 @@
                 <div class="caption">
                     <h3> Administrar coordinadores </h3>
                     <p> Revisa la lista de coordinadores de la asignatura Fundamentos de Computación Programación. </p>
-                    <p><a class="btn btn-primary" role="button">Ir lista coordinadores</a></p>
+                    <p><a class="btn btn-primary" ng-click="go('/administrator/listCoordinator')" role="button">Ir lista coordinadores</a></p>
                 </div>
             </div>
         </div>
@@ -26,7 +26,7 @@
                 <div class="caption">
                     <h3> Administrar profesores </h3>
                     <p> Revisa a los profesores de la asignatura Fundamentos de Computación y Programación. </p>
-                    <p><a class="btn btn-primary" role="button">Ir a lista de profesores</a></p>
+                    <p><a class="btn btn-primary" ng-click="go('/administrator/listTeacher')" role="button">Ir a lista de profesores</a></p>
                 </div>
             </div>
         </div>
@@ -37,7 +37,7 @@
                 <div class="caption">
                     <h3> Administrar Alumnos </h3>
                     <p> Revisa la lista todos los alumnos de la cátedra de Fundamentos de Programación y Coordinación. </p>
-                    <p><a class="btn btn-primary" role="button">Ir a lista de alumnos</a></p>
+                    <p><a class="btn btn-primary" ng-click="go('/administrator/listStudent')" role="button">Ir a lista de alumnos</a></p>
                 </div>
             </div>
         </div>
