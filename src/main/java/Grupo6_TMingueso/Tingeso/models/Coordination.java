@@ -1,6 +1,7 @@
 package Grupo6_TMingueso.Tingeso.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Set;
 
@@ -20,6 +21,9 @@ public class Coordination implements Serializable{
     @JoinColumn(name = "id_teacher")
 
     private Teacher teacher;
+
+    @NotNull
+    private String name_coordination;
 
 
     @OneToMany(mappedBy = "coordination", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
@@ -50,7 +54,12 @@ public class Coordination implements Serializable{
         this.teacher = teacher;
     }
 
-
+    public String getName_coordination() {
+        return name_coordination;
+    }
+    public void setName_coordination(String name_coordination){
+        this.name_coordination=name_coordination;
+    }
 
     public Coordination(){
 
