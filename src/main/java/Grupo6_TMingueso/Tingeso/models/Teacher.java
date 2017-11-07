@@ -23,6 +23,8 @@ public class Teacher implements Serializable {
     @NotNull
     private String name;
 
+    private String lastName;
+
     @NotNull
     private String email;
 
@@ -81,6 +83,14 @@ public class Teacher implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
