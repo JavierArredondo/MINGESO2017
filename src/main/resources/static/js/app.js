@@ -4,16 +4,16 @@ app.config(function($routeProvider){
     $routeProvider
 
         //Student
+        .when('/student/home',{
+            templateUrl: 'js/views/student/homeStudent.html',
+            controller: 'homeStudentController'
+        })
 
         .when('/student/coding',{
                     templateUrl: 'js/views/student/coding.html',
                     controller: 'codingViewController'
         })
 
-        .when('/student/home',{
-                    templateUrl: 'js/views/student/homeStudent.html',
-                    controller: 'homeStudentController'
-        })
         .when('/student/exercisesStudent',{
                     templateUrl: 'js/views/student/exercisesStudent.html',
                     controller: 'exerciseStudentController'
@@ -21,10 +21,14 @@ app.config(function($routeProvider){
 
 
         //Teacher
+        .when('/teacher/home',{
+            templateUrl: 'js/views/teacher/homeTeacher.html',
+            controller: 'homeTeacherController'
+        })
 
         .when('/teacher/exercises',{
                     templateUrl: 'js/views/teacher/exercises.html',
-                    controller: 'homeTeacherController'
+                    controller: 'exercisesController'
         })
 
         .when('/teacher/listCourses',{
@@ -43,6 +47,10 @@ app.config(function($routeProvider){
         })
 
         //Coordinator
+        .when('/coordinator/home',{
+            templateUrl: 'js/views/coordinator/homeCoordinator.html',
+            controller: 'homeAdministratorController'
+        })
 
         .when('/coordinator/newExercises',{
                     templateUrl: 'js/views/coordinator/newExercisesCoordinator.html',
@@ -69,26 +77,8 @@ app.config(function($routeProvider){
                     controller: 'homeCoordinatorController'
         })
 
-        //Login
-
-        .when('/teacher/homeTeacher',{
-                    templateUrl: 'js/views/teacher/homeTeacher.html',
-                    controller: 'loginController'
-        })
-
-        .when('/student/homeStudent',{
-                    templateUrl: 'js/views/student/homeStudent.html',
-                    controller: 'loginController'
-        })
-
-        .when('/coordinator/homeCoordinator',{
-                    templateUrl: 'js/views/coordinator/homeCoordinator.html',
-                    controller: 'loginController'
-        })
-
         //Administrator
-
-        .when('/administrator/homeAdmin',{
+        .when('/administrator/home',{
                     templateUrl: 'js/views/administrator/homeAdmin.html',
                     controller: 'homeAdministratorController'
         })
@@ -114,7 +104,6 @@ app.config(function($routeProvider){
         })
 
         //Other
-
         .when('/login',{
                     templateUrl: 'js/views/login.html',
                     controller: 'loginController'

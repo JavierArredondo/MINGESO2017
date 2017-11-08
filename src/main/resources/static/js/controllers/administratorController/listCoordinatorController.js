@@ -6,4 +6,14 @@ app.controller('listCoordinatorController', ['$scope','$http','$location', funct
         $location.path( path );
     };
 
+    $scope.getCoordinares = function() {
+    		$http.get('http://localhost:1919/teacher/allCoordinares').then(function(data) {
+    			$scope.coordinares = data.data;
+    		});
+    	};
+    $scope.delCoordinator = function(id) {
+      	$http.delete('http://localhost:1919/teacher/' + id).then(function(data) {});
+        window.location.reload();
+      };
+
 }]);
