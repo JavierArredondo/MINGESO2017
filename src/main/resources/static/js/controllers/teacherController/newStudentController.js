@@ -23,6 +23,10 @@ app.controller('newStudentController', ['$scope','$http', function($scope,$http)
         })
     };
 
+    $scope.go = function ( path ) {
+        $location.path( path );
+    };
+
     $scope.rutCompleter = function () {
         var rut_input = $scope.rut;
         if(rut_input.length <= 12) {
