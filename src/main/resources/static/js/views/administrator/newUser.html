@@ -32,9 +32,16 @@
 
                         <div class="form-group row">
                             <div class="col-md-3">
-                                <label> PASSWORD: </label>
+                                <label> Password: </label>
                                 <input type="password" id = "password" ng-model="password" name = "password" class="form-control">
                             </div>
+                            <div class="col-md-3">
+                                <label> Confirm Password: </label>
+                                <input type="password" id = "passwordConfirm" ng-model="password" name = "password" class="form-control">
+                            </div>
+                            <label class="checkbox-inline">
+                                <input type="checkbox"  value="coordinador"> ES COORDINADOR
+                            </label>
                             <!--div class="col-md-8">
                                 <label for="id_coordination"> Coordinacion:</label>
                                 <input id="id_coordination" ng-model="id_coordination" type="id_coordination" class="form-control">

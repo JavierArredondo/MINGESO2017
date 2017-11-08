@@ -14,6 +14,9 @@
                     <td> {{ student.name }} </td>
                     <td> {{ student.lastName }} </td>
                     <td> {{ student.email }} </td>
+                    <td><button type="button" class="btn btn-warning" ng-click="go('/administrator/modifyUser')"> Modificar </button>
+                        <button type="button" class="btn btn-danger"> Eliminar </button>
+                    </td>
                 </tr>
                 <!--tr ng-repeat = "x in exercises">
                     <td>{{x.name}}</td>

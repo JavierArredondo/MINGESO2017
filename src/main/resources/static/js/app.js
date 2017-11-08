@@ -83,6 +83,11 @@ app.config(function($routeProvider){
                     controller: 'homeAdministratorController'
         })
 
+        .when('/administrator/modifyUser',{
+                    templateUrl: 'js/views/administrator/modifyUser.html',
+                    controller: 'homeAdministratorController'
+        })
+
         .when('/administrator/newUser',{
                     templateUrl: 'js/views/administrator/newUser.html',
                     controller: 'newUserController'

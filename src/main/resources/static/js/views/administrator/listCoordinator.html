@@ -11,7 +11,7 @@
                 <tr ng-repeat="coordinator in coordinares">
                     <td> {{ coordinator.name }} </td>
                     <td> {{ coordinator.last_name }} </td>
-                    <td><button type="button" class="btn btn-warning"> Modificar </button>
+                    <td><button type="button" class="btn btn-warning" ng-click="go('/administrator/modifyUser')" > Modificar </button>
                         <button type="button" class="btn btn-danger" ng-click="delCoordinator(coordinator.id_teacher)"> Eliminar </button>
                     </td>
                 </tr>
