@@ -33,9 +33,13 @@
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-md-3">
+                            <div class="col-md-5">
                                 <label> PASSWORD: </label>
                                 <input type="password" id = "password" ng-model="password" name = "password" class="form-control">
+                            </div>
+                            <div class="col-md-4">
+                                <label> Coordinacion: </label>
+                                <input type="text" id = "coordinacion" ng-model="coordinacion" class="form-control" placeholder="A-1">
                             </div>
                             <!--div class="col-md-8">
                                 <label for="id_coordination"> Coordinacion:</label>
@@ -43,12 +47,19 @@
                             </div-->
                         </div>
 
+                        <div>
+                            <label class="checkbox-inline">
+                                <input type="checkbox"  value="coordinador"> ES COORDINADOR
+                            </label>
+                        </div>
+
                         <!-- Third row: career-->
 
                         <!-- -->
                     </div>
                     <div class="panel-footer">
-                        <input class="btn btn-primary" type="sumbit" value="Agregar Profesor">
+                        <input class="btn btn-info btn-lg" type="sumbit" value="Agregar Profesor">
+                        <input class="btn btn-info btn-lg" type="sumbit" ng-click="go('/coordinator/home')" value="Atras">
                     </div>
                 </div>
             </form>
