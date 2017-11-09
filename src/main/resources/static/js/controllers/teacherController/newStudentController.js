@@ -1,4 +1,4 @@
-app.controller('newStudentController', ['$scope','$http', function($scope,$http) {
+app.controller('newStudentController', ['$scope','$http','$location', function($scope,$http,$location) {
     $scope.title = "Home - Nuevo estudiante";
 
     $scope.addStudent = function() {
