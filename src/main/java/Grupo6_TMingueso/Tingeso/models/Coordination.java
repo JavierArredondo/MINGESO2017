@@ -4,6 +4,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Set;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name="coordination")
@@ -14,12 +16,12 @@ public class Coordination implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_coordination")
-
     private long id_coordination;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_teacher")
-
+    //@JsonBackReference
+    @JsonManagedReference
     private Teacher teacher;
 
     @NotNull
@@ -27,7 +29,8 @@ public class Coordination implements Serializable{
 
 
     @OneToMany(mappedBy = "coordination", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-
+    //@JsonManagedReference
+    @JsonBackReference
     private Set<Student> students;
 
     public Set<Student> getStudents() {

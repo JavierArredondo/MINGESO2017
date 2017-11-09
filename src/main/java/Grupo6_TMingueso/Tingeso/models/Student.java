@@ -3,6 +3,8 @@ package Grupo6_TMingueso.Tingeso.models;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Set;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name="student")
@@ -36,13 +38,14 @@ public class Student {
     private Integer total_wordings;
 
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-
+    //@JsonManagedReference
+    @JsonBackReference
     private Set<Solution> solutions;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_coordination")
-
-
+    //@JsonBackReference
+    @JsonManagedReference
     private Coordination coordination;
 
     public Coordination getCoordination() {
@@ -138,8 +141,3 @@ public class Student {
 
 
 }
-
-
-
-
-

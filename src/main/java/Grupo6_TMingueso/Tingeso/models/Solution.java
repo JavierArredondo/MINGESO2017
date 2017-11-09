@@ -3,6 +3,8 @@ package Grupo6_TMingueso.Tingeso.models;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name="solution")
@@ -28,8 +30,8 @@ public class Solution {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "student_id")
-
-
+    //@JsonBackReference
+    @JsonManagedReference
     private Student student;
 
     public Student getStudent() {

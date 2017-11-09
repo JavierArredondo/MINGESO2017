@@ -1,6 +1,25 @@
 <div class="container">
     <div class="panel panel-default">
         <div class="panel-heading"><h2> Listado de estudiantes </h2></div>
+<<<<<<< HEAD
+        <div class="panel-body" id="content" ng-controller="listStudentController" ng-init="getStudents()" ng-show="students != null">
+          <table class="table table-hover">
+            <tr>
+                <th> Nombre </th>
+                <th> Apellidos </th>
+                <th> Coordinación </th>
+                <th> Acción </th>
+            </tr>
+              <tr ng-repeat="student in students">
+                  <td> {{ student.name }} </td>
+                  <td> {{ student.lastName }} </td>
+                  <td> {{ student.coordination.name_coordination }} </td>
+                  <td><button type="button" class="btn btn-warning" ng-click="hola()"> Modificar </button>
+                      <button type="button" class="btn btn-danger" ng-click="delStudent(student.student_id)"> Eliminar </button>
+                  </td>
+              </tr>
+          </table>
+=======
         <div class="panel-body">
             <table class="table table-hover">
                 <tr>
@@ -18,6 +37,7 @@
                     </td>
                 </tr>
             </table>
+>>>>>>> f5c9e57cc4a724c03933db14a8d7f28708a393e3
         </div>
 
         <div class="panel-footer">

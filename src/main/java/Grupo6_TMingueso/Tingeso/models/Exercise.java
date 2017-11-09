@@ -2,6 +2,8 @@ package Grupo6_TMingueso.Tingeso.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+//import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name="exercise")
@@ -24,7 +26,8 @@ public class Exercise {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_teacher")
-
+    //@JsonBackReference
+    @JsonManagedReference
     private Teacher teacher;
 
     public Teacher getTeacher() {

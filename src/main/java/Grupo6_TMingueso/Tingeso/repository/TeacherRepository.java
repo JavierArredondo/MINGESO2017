@@ -11,4 +11,6 @@ public interface TeacherRepository extends CrudRepository<Teacher,Long>{
     @Query("select u from Teacher u where u.is_admin=true")
     Iterable<Teacher> findAllByCustomQueryAndStream();
 
+    //@Query("select u from Teacher u where 1=1")
+    //Iterable<Teacher> findAllTeachers();
 }
