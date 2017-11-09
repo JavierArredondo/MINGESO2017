@@ -17,30 +17,27 @@ public class StudentController {
 
 
     //metodo que retorna un estudiante de acuerdo a su id
+    
     @GetMapping(path = "/{id}")
     public @ResponseBody Student getStudent(@PathVariable("id") Integer id){
         long lid = id.longValue();
         return studentRepository.findOne(lid);
-        //return studentRepository.findOne(lid);
     }
 
     //method get that extracts students from database
+
     @GetMapping(path = "/all")
     public @ResponseBody Iterable<Student> getAllStudents(){
         return studentRepository.findAll();
     }
 
-
-
-
     //method post that add student
     // url of method is localhost:1919/new , in case that port is 1919, if not change in aplication.properties
+
     @RequestMapping(path ="/new",method = RequestMethod.POST)
     public Integer CreateStudent(@RequestBody Student student){
-
         studentRepository.save(student);
         return 1;
-
     }
 
     //metodo put que permite actualizar a un alumno o estudiante
@@ -52,7 +49,6 @@ public class StudentController {
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     public Student update(@RequestBody Student resource, @PathVariable("id") long id){
-
         Student viejoUser = studentRepository.findOne(id);
         //viejoUser.setName(resource.getName());
         viejoUser.setEmail(resource.getEmail());

@@ -13,14 +13,10 @@ app.controller('newExerciseController', ['$scope','$http', function($scope,$http
     			window.alert("Se agregó correctamente el enunciado.");
     			$scope.otro = "";
     			$scope.text = "";
-                $scope.answer = "";
+          $scope.answer = "";
     		}).catch(function(data) {
     			window.alert("Se ha producido un error.");
     		});
     	};
 
 }]);
-
-
-
-

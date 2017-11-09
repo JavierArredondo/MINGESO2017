@@ -1,24 +1,24 @@
 <div class="container">
     <div class="panel panel-default">
         <div class="panel-heading"><h2> Listado de profesores </h2></div>
-        <div class="panel-body">
+          <div class="panel-body" id="content" ng-controller="listTeacherController" ng-init="getTeachers()" ng-show="teachers != null">
             <table class="table table-hover">
-                <tr>
-                    <th> Nombre </th>
-                    <th> Apellido </th>
-                    <th> Mail </th>
-                    <th> Acción </th>
-                </tr>
-                <tr>
-                    <td> Esteban </td>
-                    <td> Perez-Yoma </td>
-                    <td> soyesteban@correo.cl</td>
-                    <td><button type="button" class="btn btn-warning"> Modificar </button>
-                        <button type="button" class="btn btn-danger"> Eliminar </button>
-                    </td>
-                </tr>
+              <tr>
+                <th> Nombre </th>
+                <th> Apellido </th>
+                <th> Mail </th>
+                <th> Acción </th>
+              </tr>
+              <tr ng-repeat="teacher in teachers">
+                  <td> {{ teacher.name }} </td>
+                  <td> {{ teacher.last_name }} </td>
+                  <td> {{ teacher.email }} </td>
+                  <td><button type="button" class="btn btn-warning"> Modificar </button>
+                      <button type="button" class="btn btn-danger" ng-click="delTeacher(teacher.id_teacher)"> Eliminar </button>
+                  </td>
+              </tr>
             </table>
-        </div>
+          </div>
         <div class="panel-footer"></div>
     </div>
 </div>

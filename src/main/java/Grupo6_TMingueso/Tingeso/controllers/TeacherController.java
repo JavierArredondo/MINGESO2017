@@ -29,8 +29,7 @@ public class TeacherController {
     //method get that extracts teachers from database
     //metodo get que extrae todos los profesores
     @GetMapping(path = "/allTeachers")
-    public @ResponseBody
-    Iterable<Teacher> getAllTeachers(){
+    public @ResponseBody Iterable<Teacher> getAllTeachers(){
         return teacherRepository.findAll();
     }
 
@@ -39,7 +38,6 @@ public class TeacherController {
     @GetMapping(path = "/allCoordinares")
     public @ResponseBody
     Iterable<Teacher> getAllCoordinations(){
-
         return teacherRepository.findAllByCustomQueryAndStream();
     }
 
