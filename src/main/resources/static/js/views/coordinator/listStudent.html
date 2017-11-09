@@ -14,9 +14,16 @@
                     <td> {{ student.name }} </td>
                     <td> {{ student.lastName }} </td>
                     <td> {{ student.email }} </td>
+                    <td><button type="button" class="btn btn-warning" ng-click="go('/administrator/modifyUser')"> Modificar </button>
+                        <button type="button" class="btn btn-danger"> Eliminar </button>
+                    </td>
                 </tr>
             </table>
         </div>
+        <div class="panel-footer">
+            <input class="btn btn-info btn-lg" type="button" ng-click="go('/coordinator/home')" value="Atras">
+        </div>
+
         <div class="panel-footer"></div>
     </div>
 </div>

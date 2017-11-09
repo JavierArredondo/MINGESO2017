@@ -1,5 +1,9 @@
-app.controller('newExerciseController', ['$scope','$http', function($scope,$http) {
+app.controller('newExerciseController', ['$scope','$http','$location', function($scope,$http,$location) {
     $scope.titl = "Home - Nuevo ejercicio"
+
+    $scope.go = function ( path ) {
+        $location.path( path );
+    };
 
 	$scope.addExercise = function() {
             var d = {
@@ -18,5 +22,6 @@ app.controller('newExerciseController', ['$scope','$http', function($scope,$http
     			window.alert("Se ha producido un error.");
     		});
     	};
+
 
 }]);

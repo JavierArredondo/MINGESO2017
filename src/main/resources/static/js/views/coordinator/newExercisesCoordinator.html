@@ -10,18 +10,18 @@
                         <div class="form-group row">
                             <div class="col-md-12">
                                 <label> Nombre del enunciado </label>
-                                <input type="text" class="form-control" placeholder="José Miguel">
+                                <input type="text" class="form-control" placeholder="Realizar búsqueda binaria">
                             </div>
                         </div>
                         <!-- Second row: run and mail-->
                         <div class="form-group row">
                             <div class="col-md-6">
                                 <label> Fecha de entrega: </label>
-                                <input type="text" id = "rut" name = "rut" class="form-control" placeholder="xx/xx/xx">
+                                <input class="form-control" type="date" value="2017-01-01" id="date-input">
                             </div>
                             <div class="col-md-6">
                                 <label> Hora de entrega: </label>
-                                <input type="text" id = "rut" name = "rut" class="form-control" placeholder="xx:xx">
+                                <input class="form-control" type="time" value="23:55:00" id="time-input">
                             </div>
                         </div>
                         <!-- Third row: career-->
@@ -35,7 +35,8 @@
                         <!-- -->
                     </div>
                     <div class="panel-footer">
-                        <input class="btn btn-primary" type="button" value="Ingresar información">
+                        <input class="btn btn-info btn-lg" type="button" value="Ingresar información">
+                        <input class="btn btn-info btn-lg" type="button" ng-click="go('/coordinator/home')" value="Atras">
                     </div>
                 </div>
             </form>

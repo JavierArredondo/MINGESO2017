@@ -1,4 +1,4 @@
-app.controller('codingViewController', ['$scope', '$http', function ($scope, $http) {
+app.controller('codingViewController', ['$scope', '$http','$location', function ($scope, $http,$location) {
 
     $scope.spinner = true;
     $scope.results = false;
@@ -8,6 +8,10 @@ app.controller('codingViewController', ['$scope', '$http', function ($scope, $ht
         lineNumbers: true,
         theme: "material",
         value: "Escriba aquí su código..."
+    };
+
+    $scope.go = function ( path ) {
+        $location.path( path );
     };
 
     $scope.sendCode = function () {

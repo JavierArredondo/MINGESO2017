@@ -1,10 +1,11 @@
-app.controller('newUserController', ['$scope','$http','$location', function($scope,$http,$location) {
+app.controller('newTeacherController', ['$scope','$http','$location', function($scope,$http,$location) {
 
-    $scope.title = "Home - Administrador"
+    $scope.title = "Home - Coordinador"
 
     $scope.go = function ( path ) {
         $location.path( path );
     };
+
     $scope.rutCompleter = function () {
         var rut_input = $scope.rut;
         if(rut_input.length <= 12) {
