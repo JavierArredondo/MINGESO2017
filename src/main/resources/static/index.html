@@ -2,6 +2,8 @@
 <html ng-app="Myapp" ng-controller="mainController">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title> {{ title }} </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -38,10 +40,7 @@
     <script type="text/javascript" src="js/controllers/administratorController/homeAdministratorController.js"></script>
     <script type="text/javascript" src="js/controllers/administratorController/listCoordinatorController.js"></script>
     <script type="text/javascript" src="js/controllers/administratorController/listTeacherController.js"></script>
-<<<<<<< HEAD
-=======
     <script type="text/javascript" src="js/controllers/administratorController/listStudentController.js"></script>
->>>>>>> f5c9e57cc4a724c03933db14a8d7f28708a393e3
     <script type="text/javascript" src="js/controllers/administratorController/newUserController.js"></script>
     <script type="text/javascript" src="js/controllers/administratorController/modifyCoordinatorController.js"></script>
     <script type="text/javascript" src="js/controllers/administratorController/modifyStudentController.js"></script>
@@ -52,30 +51,97 @@
     <script type="text/javascript" src="codemirror/mode/python/python.js"></script>
     <script type="text/javascript" src="js/lib/ui-codemirror.js"></script>
 
+    <link rel="stylesheet" href="css/style5.css">
 </head>
 
 <body>
-<nav class="navbar navbar-inverse">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="#">{{ title }}</a>
-    </div>
-    <ul class="nav navbar-nav">
-        <li ng-repeat="element in navigation" class="{{ element.condition ? 'active' : '' }}"><a ng-href="{{element.link}}">{{element.text}}</a> </li>
-    </ul>
-</nav>
+<div class="wrapper">
+    <!-- Sidebar Holder -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>
+                <img src="http://icons.iconarchive.com/icons/cornmanthe3rd/plex/256/Other-python-icon.png" alt="Cinque Terre" height="22" width="22">
+                Plataforma FCyP
+            </h3>
+        </div>
 
-<main>
-    <div ng-view></div>
-</main>
+        <ul class="list-unstyled components">
+            <img src="http://localmarketingplus.ca/wp-content/uploads/2015/02/blue-head.jpg" class="img-circle" alt="Cinque Terre" align="center"height="200" width="200">
+            <li class="active">
+                <h3>Mario Caceres</h3>
+            </li>
+            <li class="active">
+                <h4>Estudiante</h4>
+            </li>
+
+
+        </ul>
+
+        <ul class="list-unstyled CTAs">
+            <li><a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Cerrar Sesion</a></li>
+            <br>
+            <li>
+                <a href="http://www.informatica.usach.cl/" class="article">
+                Universidad de Santiago de Chile<br>
+                Departamento de Ingeniería <br>Informática
+                </a>
+            </li>
+        </ul>
+
+
+    </nav>
+
+    <!-- Page Content Holder -->
+    <div id="content">
+
+        <nav class="navbar navbar-default" id = "containerTop">
+            <div class="container-fluid">
+
+                <div class="navbar-header" id = "hideButton">
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#">
+                            <img src="https://image.flaticon.com/icons/png/512/25/25694.png" alt="Cinque Terre" height="30" width="30">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+        <main>
+            <div ng-view></div>
+        </main>
+
+    </div>
+</div>
+
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<!-- Bootstrap Js CDN -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+            $(this).toggleClass('active');
+        });
+    });
+</script>
+
+
 
 </body>
 
-<footer class="footer">
-    <div class="container">
-        <p style="color: #FFFFFF">
-            Universidad de Santiago de Chile - Departamento de Ingeniería Informática
-        </p>
-    </div>
-</footer>
 
 </html>

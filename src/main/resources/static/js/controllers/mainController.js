@@ -5,6 +5,8 @@ app.controller('mainController', ['$scope','$location', function($scope,$locatio
     $scope.login = $location.path() === '/login';
     $scope.home = $location.path() === '/home';
 
+	$location.path('/login');
+
 	$scope.navigation = [
 	{"text":"Iniciar sesión",   "link":"#!/login", "condition": $scope.login , },
 	];
