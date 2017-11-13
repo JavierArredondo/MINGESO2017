@@ -1,10 +1,24 @@
 app.controller('codingViewController', ['$scope', '$http','$location', function ($scope, $http,$location) {
-
+    $scope.lang = 1;
     $scope.spinner = true;
     $scope.results = false;
 
-    $scope.myCodeMirrorOptions = {
+    $scope.myCodeMirrorOptionsPython = {
         mode: "python",
+        lineNumbers: true,
+        theme: "material",
+        value: "Escriba aquí su código..."
+    };
+
+    $scope.myCodeMirrorOptionsC = {
+        mode: "clike",
+        lineNumbers: true,
+        theme: "material",
+        value: "Escriba aquí su código..."
+    };
+
+    $scope.myCodeMirrorOptionsJava = {
+        mode: "text/x-java",
         lineNumbers: true,
         theme: "material",
         value: "Escriba aquí su código..."
@@ -13,6 +27,10 @@ app.controller('codingViewController', ['$scope', '$http','$location', function 
     $scope.go = function ( path ) {
         $location.path( path );
     };
+
+    $scope.setLang = function(lang){
+        $scope.lang = lang;
+    }
 
     $scope.sendCode = function () {
         var code = {
