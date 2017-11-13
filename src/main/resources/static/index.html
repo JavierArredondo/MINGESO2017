@@ -51,6 +51,7 @@
     <script type="text/javascript" src="codemirror/mode/python/python.js"></script>
     <script type="text/javascript" src="codemirror/mode/clike/clike.js"></script>
     <script type="text/javascript" src="js/lib/ui-codemirror.js"></script>
+    <script type="text/javascript" src="js/lib/angular-google-plus.min.js"></script>
 
     <link rel="stylesheet" href="css/style5.css">
 </head>
@@ -67,19 +68,26 @@
         </div>
 
         <ul class="list-unstyled components">
-            <img src="http://localmarketingplus.ca/wp-content/uploads/2015/02/blue-head.jpg" class="img-circle" alt="Cinque Terre" align="center"height="200" width="200">
-            <li class="active">
-                <h3>Mario Caceres</h3>
-            </li>
-            <li class="active">
-                <h4>Estudiante</h4>
-            </li>
+            <div ng-show = "!session">
+                <li><a ng-click="login()">Iniciar Sesion</a></li>
+            </div>
 
+            <div ng-show = "session">
+                <img src="{{image}}" class="img-circle" alt="Cinque Terre" align="center"height="200" width="200">
+                <li class="active">
+                    <h3>{{name}}</h3>
+                </li>
+                <li class="active">
+                    <h4>{{role}}</h4>
+                </li>
+            </div>
 
         </ul>
 
         <ul class="list-unstyled CTAs">
-            <li><a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Cerrar Sesion</a></li>
+            <div ng-show = "session">
+                <li><a ng-click="logout()">Cerrar Sesion</a></li>
+            </div>
             <br>
             <li>
                 <a href="http://www.informatica.usach.cl/" class="article">
@@ -109,7 +117,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="#">
+                            <a href="#!{{home}}">
                             <img src="https://image.flaticon.com/icons/png/512/25/25694.png" alt="Cinque Terre" height="30" width="30">
                             </a>
                         </li>
@@ -118,7 +126,9 @@
 
             </div>
         </nav>
-
+        <div class="alert alert-danger" ng-show = "error">
+            <strong>Error!</strong> Para ingresar debe utilizar su cuenta usach (ej: juan.perez@usach.cl).
+        </div>
         <main>
             <div ng-view></div>
         </main>

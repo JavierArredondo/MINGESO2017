@@ -24,7 +24,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 /**
  * Created by mario on 24-10-17.
  */
-/*
+
 @RunWith(SpringRunner.class)
 @WebMvcTest(value = PythonController.class, secure = false)
 public class PythonControllerTests {
@@ -54,4 +54,4 @@ public class PythonControllerTests {
     }
 
 }
-*/
+

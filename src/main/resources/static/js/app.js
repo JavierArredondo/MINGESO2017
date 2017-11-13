@@ -1,4 +1,33 @@
-var app = angular.module('Myapp',['ngRoute', 'ui.codemirror']);
+var app = angular.module('Myapp',['ngRoute', 'ui.codemirror', 'googleplus']);
+
+app.config(['GooglePlusProvider', function(GooglePlusProvider) {
+    GooglePlusProvider.init({
+        clientId: '401475042622-io17gpkn0aqungvhhm9mfnitc3ls5jh3.apps.googleusercontent.com',
+        apiKey: 'XBpM08bYtNfDvY45D4ITlxAz',
+        hostedDomain: 'usach.cl'
+    });
+
+}]);
+
+app.factory('userService',['$rootScope',function($rootScope){
+    var user = {};
+    return {
+        getUser : function () {
+            return user;
+        },
+
+        setUser : function (email, name, hd, id, picture, role) {
+            user.email = email;
+            user.name = name;
+            user.hd = hd;
+            user.id = id;
+            user.picture = picture;
+            user.role = role;
+        }
+    }
+}]);
+
+
 
 app.config(function($routeProvider){
     $routeProvider
