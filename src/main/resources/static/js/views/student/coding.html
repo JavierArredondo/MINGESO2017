@@ -1,18 +1,6 @@
 <div class="container">
-
     <div class="thumbnail">
-        <h2>Practica Aquí</h2>
-        <p>Elige el lenguaje de programación que deseas practicar:</p>
-        <div class="btn-group">
-            <button type="button" class="btn btn-primary" ng-click="setLang(1)">Python</button>
-            <button type="button" class="btn btn-primary" ng-click="setLang(2)">Java</button>
-            <button type="button" class="btn btn-primary" ng-click="setLang(3)">C</button>
-        </div>
-    </div>
-    <div class="thumbnail">
-        <ui-codemirror ui-codemirror-opts="myCodeMirrorOptionsPython" ng-model="valuePy" ng-show="lang == 1"></ui-codemirror>
-        <ui-codemirror ui-codemirror-opts="myCodeMirrorOptionsJava" ng-model="valueJava" ng-show="lang == 2"></ui-codemirror>
-        <ui-codemirror ui-codemirror-opts="myCodeMirrorOptionsC" ng-model="valueC" ng-show="lang == 3"></ui-codemirror>
+        <ui-codemirror ui-codemirror-opts="myCodeMirrorOptionsPython" ng-model="value"></ui-codemirror>
     </div>
 
     <div class="container">

@@ -27,6 +27,18 @@ app.factory('userService',['$rootScope',function($rootScope){
     }
 }]);
 
+app.factory('LanguageService',['$rootScope',function($rootScope){
+    var language = null;
+    return {
+        getLanguage : function () {
+            return language;
+        },
+
+        setLanguage : function (lang) {
+            language = lang;
+        }
+    }
+}]);
 
 
 app.config(function($routeProvider){
@@ -36,6 +48,11 @@ app.config(function($routeProvider){
         .when('/student/home',{
             templateUrl: 'js/views/student/homeStudent.html',
             controller: 'homeStudentController'
+        })
+
+        .when('/student/language',{
+            templateUrl: 'js/views/student/languageSelectorView.html',
+            controller: 'languageSelectorController'
         })
 
         .when('/student/coding',{

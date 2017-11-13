@@ -1,36 +1,16 @@
-app.controller('codingViewController', ['$scope', '$http','$location', function ($scope, $http,$location) {
-    $scope.lang = 1;
+app.controller('codingViewController', ['$scope', '$http','$location','LanguageService', function ($scope, $http,$location,LanguageService) {
     $scope.spinner = true;
     $scope.results = false;
 
     $scope.myCodeMirrorOptionsPython = {
-        mode: "python",
+        mode: LanguageService.getLanguage(),
         lineNumbers: true,
-        theme: "material",
-        value: "Escriba aquí su código..."
-    };
-
-    $scope.myCodeMirrorOptionsC = {
-        mode: "clike",
-        lineNumbers: true,
-        theme: "material",
-        value: "Escriba aquí su código..."
-    };
-
-    $scope.myCodeMirrorOptionsJava = {
-        mode: "text/x-java",
-        lineNumbers: true,
-        theme: "material",
-        value: "Escriba aquí su código..."
+        theme: "material"
     };
 
     $scope.go = function ( path ) {
         $location.path( path );
     };
-
-    $scope.setLang = function(lang){
-        $scope.lang = lang;
-    }
 
     $scope.sendCode = function () {
         var code = {
@@ -47,7 +27,7 @@ app.controller('codingViewController', ['$scope', '$http','$location', function 
             $scope.results = true;
         });
 
-    }
+    };
 
     $scope.resetPopup = function () {
         $scope.status = 3;
