@@ -21,7 +21,7 @@ public class Coordination implements Serializable{
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_teacher")
     //@JsonBackReference
-    @JsonManagedReference
+    //@JsonManagedReference(value="teacher-coordination")
     private Teacher teacher;
 
     @NotNull
@@ -30,7 +30,7 @@ public class Coordination implements Serializable{
 
     @OneToMany(mappedBy = "coordination", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     //@JsonManagedReference
-    @JsonBackReference
+    @JsonBackReference(value="student-coordination")
     private Set<Student> students;
 
     public Set<Student> getStudents() {

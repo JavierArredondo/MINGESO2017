@@ -27,7 +27,7 @@ public class Exercise {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_teacher")
     //@JsonBackReference
-    @JsonManagedReference
+    //@JsonManagedReference(value="teacher-exercise")
     private Teacher teacher;
 
     public Teacher getTeacher() {

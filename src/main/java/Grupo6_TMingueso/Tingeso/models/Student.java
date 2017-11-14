@@ -39,13 +39,13 @@ public class Student {
 
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     //@JsonManagedReference
-    @JsonBackReference
+    @JsonBackReference(value="student-solution")
     private Set<Solution> solutions;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_coordination")
     //@JsonBackReference
-    @JsonManagedReference
+    //@JsonManagedReference(value="student-coordination")
     private Coordination coordination;
 
     public Coordination getCoordination() {

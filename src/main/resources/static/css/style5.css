@@ -51,13 +51,12 @@ a, a:hover, a:focus {
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
-.wrapper {
+#wrapper-index {
     display: flex;
     align-items: stretch;
     perspective: 1500px;
-    text-align: center;
+    text-align: left;
 }
-
 
 
 #sidebar {

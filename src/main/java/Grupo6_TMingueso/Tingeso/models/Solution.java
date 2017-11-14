@@ -31,7 +31,7 @@ public class Solution {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "student_id")
     //@JsonBackReference
-    @JsonManagedReference
+    //@JsonManagedReference(value="student-solution")
     private Student student;
 
     public Student getStudent() {

@@ -38,12 +38,12 @@ public class Teacher implements Serializable {
 
     @OneToMany(mappedBy = "teacher", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     //@JsonManagedReference
-    @JsonBackReference
+    @JsonBackReference(value="teacher-coordination")
     private Set<Coordination> coordinations;
 
     @OneToMany(mappedBy = "teacher", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     //@JsonManagedReference
-    @JsonBackReference
+    @JsonBackReference(value="teacher-exercise")
     private Set<Exercise> exercises;
 
     public Teacher() {
