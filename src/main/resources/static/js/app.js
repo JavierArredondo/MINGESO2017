@@ -174,3 +174,66 @@ app.config(function($routeProvider){
             redirectTo: '/index'
         });
 });
+
+app.run( function($rootScope, $location,userService) {
+
+    // register listener to watch route changes
+    $rootScope.$on( "$routeChangeStart", function(event, next, current) {
+        if ( userService.getUser().role == null ) {
+            // no logged user, we should be going to #login
+            if ( next.templateUrl == "views/login.html" ) {
+                // already going to #login, no redirect needed
+            }
+            else {
+                // not going to #login, we should redirect now
+                $location.path( "/login" );
+            }
+        }
+        else if(userService.getUser().role == 'student'){
+            if ( next.templateUrl == "views/student/coding.html" || next.templateUrl == "views/student/exercisesStudent.html"||
+                next.templateUrl == "views/student/homeStudent.html" || next.templateUrl == "views/student/languageSelectorView.html") {
+                // already going to #login, no redirect needed
+            }
+            else {
+                // not going to #login, we should redirect now
+                $location.path( "/student/home" );
+            }
+        }
+        else if(userService.getUser().role == 'teacher'){
+            if ( next.templateUrl == "views/teacher/exercises.html" || next.templateUrl == "views/teacher/homeTeacher.html"||
+                next.templateUrl == "views/teacher/newExercise.html" || next.templateUrl == "views/teacher/newStudent.html"||
+                next.templateUrl == "views/teacher/listCourses.html") {
+                // already going to #login, no redirect needed
+            }
+            else {
+                // not going to #login, we should redirect now
+                $location.path( "/teacher/home" );
+            }
+        }
+        else if(userService.getUser().role == 'coordinator'){
+            if ( next.templateUrl == "views/coordinator/homeCoordinator.html" || next.templateUrl == "views/coordinator/listStudent.html"||
+                next.templateUrl == "views/coordinator/listTeacher.html" || next.templateUrl == "views/coordinator/modifyStudent.html"||
+                next.templateUrl == "views/coordinator/modifyTeacher.html"||next.templateUrl == "views/coordinator/newExercisesCoordinator.html"||
+                next.templateUrl == "views/coordinator/newTeacher.html") {
+                // already going to #login, no redirect needed
+            }
+            else {
+                // not going to #login, we should redirect now
+                $location.path( "/coordinator/home" );
+            }
+        }
+        else if(userService.getUser().role == 'administrator'){
+            if ( next.templateUrl == "views/administrator/homeAdmin.html" || next.templateUrl == "views/administrator/listCoordinator.html"||
+                next.templateUrl == "views/administrator/listStudent.html" || next.templateUrl == "views/administrator/listTeacher.html"||
+                next.templateUrl == "views/administrator/modifyTeacher.html"||next.templateUrl == "views/administrator/modifyStudent.html"||
+                next.templateUrl == "views/administrator/modifyCoordinator.html"||next.templateUrl == "views/administrator/newUser.html") {
+                // already going to #login, no redirect needed
+            }
+            else {
+                // not going to #login, we should redirect now
+                $location.path( "/administrator/home" );
+            }
+        }
+
+    });
+});
