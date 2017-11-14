@@ -181,7 +181,7 @@ app.run( function($rootScope, $location,userService) {
     $rootScope.$on( "$routeChangeStart", function(event, next, current) {
         if ( userService.getUser().role == null ) {
             // no logged user, we should be going to #login
-            if ( next.templateUrl == "views/login.html" ) {
+            if ( next.templateUrl == "js/views/login.html" ) {
                 // already going to #login, no redirect needed
             }
             else {
@@ -190,8 +190,8 @@ app.run( function($rootScope, $location,userService) {
             }
         }
         else if(userService.getUser().role == 'student'){
-            if ( next.templateUrl == "views/student/coding.html" || next.templateUrl == "views/student/exercisesStudent.html"||
-                next.templateUrl == "views/student/homeStudent.html" || next.templateUrl == "views/student/languageSelectorView.html") {
+            if ( next.templateUrl == "js/views/student/coding.html" || next.templateUrl == "js/views/student/exercisesStudent.html"||
+                next.templateUrl == "js/views/student/homeStudent.html" || next.templateUrl == "js/views/student/languageSelectorView.html") {
                 // already going to #login, no redirect needed
             }
             else {
@@ -200,9 +200,9 @@ app.run( function($rootScope, $location,userService) {
             }
         }
         else if(userService.getUser().role == 'teacher'){
-            if ( next.templateUrl == "views/teacher/exercises.html" || next.templateUrl == "views/teacher/homeTeacher.html"||
-                next.templateUrl == "views/teacher/newExercise.html" || next.templateUrl == "views/teacher/newStudent.html"||
-                next.templateUrl == "views/teacher/listCourses.html") {
+            if ( next.templateUrl == "js/views/teacher/exercises.html" || next.templateUrl == "js/views/teacher/homeTeacher.html"||
+                next.templateUrl == "js/views/teacher/newExercise.html" || next.templateUrl == "js/views/teacher/newStudent.html"||
+                next.templateUrl == "js/views/teacher/listCourses.html") {
                 // already going to #login, no redirect needed
             }
             else {
@@ -211,10 +211,10 @@ app.run( function($rootScope, $location,userService) {
             }
         }
         else if(userService.getUser().role == 'coordinator'){
-            if ( next.templateUrl == "views/coordinator/homeCoordinator.html" || next.templateUrl == "views/coordinator/listStudent.html"||
-                next.templateUrl == "views/coordinator/listTeacher.html" || next.templateUrl == "views/coordinator/modifyStudent.html"||
-                next.templateUrl == "views/coordinator/modifyTeacher.html"||next.templateUrl == "views/coordinator/newExercisesCoordinator.html"||
-                next.templateUrl == "views/coordinator/newTeacher.html") {
+            if ( next.templateUrl == "js/views/coordinator/homeCoordinator.html" || next.templateUrl == "js/views/coordinator/listStudent.html"||
+                next.templateUrl == "js/views/coordinator/listTeacher.html" || next.templateUrl == "js/views/coordinator/modifyStudent.html"||
+                next.templateUrl == "js/views/coordinator/modifyTeacher.html"||next.templateUrl == "js/views/coordinator/newExercisesCoordinator.html"||
+                next.templateUrl == "js/views/coordinator/newTeacher.html") {
                 // already going to #login, no redirect needed
             }
             else {
@@ -223,10 +223,10 @@ app.run( function($rootScope, $location,userService) {
             }
         }
         else if(userService.getUser().role == 'administrator'){
-            if ( next.templateUrl == "views/administrator/homeAdmin.html" || next.templateUrl == "views/administrator/listCoordinator.html"||
-                next.templateUrl == "views/administrator/listStudent.html" || next.templateUrl == "views/administrator/listTeacher.html"||
-                next.templateUrl == "views/administrator/modifyTeacher.html"||next.templateUrl == "views/administrator/modifyStudent.html"||
-                next.templateUrl == "views/administrator/modifyCoordinator.html"||next.templateUrl == "views/administrator/newUser.html") {
+            if ( next.templateUrl == "js/views/administrator/homeAdmin.html" || next.templateUrl == "js/views/administrator/listCoordinator.html"||
+                next.templateUrl == "js/views/administrator/listStudent.html" || next.templateUrl == "js/views/administrator/listTeacher.html"||
+                next.templateUrl == "js/views/administrator/modifyTeacher.html"||next.templateUrl == "js/views/administrator/modifyStudent.html"||
+                next.templateUrl == "js/views/administrator/modifyCoordinator.html"||next.templateUrl == "js/views/administrator/newUser.html") {
                 // already going to #login, no redirect needed
             }
             else {
