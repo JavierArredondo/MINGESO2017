@@ -4,4 +4,6 @@ app.controller('listCoursesController', ['$scope','$http','$location', function(
     $scope.go = function ( path ) {
         $location.path( path );
     };
+
+
 }]) ;
