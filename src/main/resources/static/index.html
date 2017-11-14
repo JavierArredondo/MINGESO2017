@@ -127,12 +127,17 @@
 
             </div>
         </nav>
-        <div class="alert alert-danger" ng-show = "error">
+        <div class="alert alert-danger" ng-show = "errorUsach">
             <strong>Error!</strong> Para ingresar debe utilizar su cuenta usach (ej: juan.perez@usach.cl).
         </div>
-        <main>
-            <div ng-view></div>
-        </main>
+        <div class="alert alert-danger" ng-show = "errorSistema">
+            <strong>Error!</strong> Usted no se encuentra ingresado en el sistema<br>Solicite acceso a su profesor/administrador.
+        </div>
+
+
+            <main>
+                <div ng-view></div>
+            </main>
 
     </div>
 </div>
