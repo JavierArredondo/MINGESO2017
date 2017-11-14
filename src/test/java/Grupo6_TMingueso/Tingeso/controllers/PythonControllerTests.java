@@ -1,4 +1,4 @@
-package Grupo6_TMingueso.Tingeso.controllers;
+/*package Grupo6_TMingueso.Tingeso.controllers;
 import Grupo6_TMingueso.Tingeso.models.Python;
 
 import static org.junit.Assert.assertEquals;
@@ -21,10 +21,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-/**
- * Created by mario on 24-10-17.
- */
 
+/*
 @RunWith(SpringRunner.class)
 @WebMvcTest(value = PythonController.class, secure = false)
 public class PythonControllerTests {
@@ -54,4 +52,4 @@ public class PythonControllerTests {
     }
 
 }
-
+*/
