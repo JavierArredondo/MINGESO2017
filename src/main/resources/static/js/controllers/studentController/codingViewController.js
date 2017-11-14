@@ -14,10 +14,26 @@ app.controller('codingViewController', ['$scope', '$http','$location','LanguageS
 
     $scope.sendCode = function () {
         var code = {
+            "lang": null,
             "code": $scope.value
         };
+
+        switch(LanguageService.getLanguage()){
+            case "python":
+                code.lang = "Python";
+                break;
+            case "text/x-java":
+                code.lang = "Java";
+                break;
+            case "text/x-csrc":
+                code.lang = "C";
+                break;
+            default:
+                break;
+        }
+
         console.log(code);
-        $http.post('/code', code).then(function (response) {
+        $http.post('http://207.154.197.207:1313/code', code).then(function (response) {
             console.log(response);
             $scope.errors = response.data.error;
             $scope.output = response.data.output;
