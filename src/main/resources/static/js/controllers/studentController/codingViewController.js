@@ -19,7 +19,6 @@ app.controller('codingViewController', ['$scope', '$http','$location','LanguageS
         $scope.spinner = true;
         $scope.buttons = false;
         $scope.results = false;
-        $scope.codeOutput = "";
         var code = {
             "lang": null,
             "code": $scope.value
@@ -48,27 +47,8 @@ app.controller('codingViewController', ['$scope', '$http','$location','LanguageS
             $scope.buttons = true;
             $scope.spinner = false;
             $scope.results = true;
-            for(i = 0; i < $scope.output.length; i++){
-                $scope.codeOutput += $scope.output[i] + "\n";
-            }
-            for(i = 0; i < $scope.errors.length; i++){
-                $scope.codeOutput += $scope.errors[i] + "\n";
-            }
-            $scope.CodeMirrorOptionsTEST = {
-                mode: LanguageService.getLanguage(),
-                lineNumbers: true,
-                theme: "material",
-                readOnly: true
-            };
         });
 
     };
-
-    $scope.resetPopup = function () {
-        $scope.status = 3;
-        $scope.spinner = true;
-        $scope.results = false;
-    }
-
 
 }]);
