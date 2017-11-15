@@ -1,5 +1,7 @@
 app.controller('codingViewController', ['$scope', '$http','$location','LanguageService', function ($scope, $http,$location,LanguageService) {
-    $scope.spinner = true;
+    $scope.spinner = true;  //Boolean to show the loader wheel
+    $scope.resultsDiv = false; //Boolean to show the coding results
+    $scope.buttons = true;  //Boolean to show the send button and back button
     $scope.results = false;
 
     $scope.myCodeMirrorOptionsPython = {
@@ -13,11 +15,15 @@ app.controller('codingViewController', ['$scope', '$http','$location','LanguageS
     };
 
     $scope.sendCode = function () {
+        $scope.resultsDiv = true;
+        $scope.spinner = true;
+        $scope.buttons = false;
+        $scope.results = false;
+        $scope.codeOutput = "";
         var code = {
             "lang": null,
             "code": $scope.value
         };
-
         switch(LanguageService.getLanguage()){
             case "python":
                 code.lang = "Python";
@@ -39,8 +45,21 @@ app.controller('codingViewController', ['$scope', '$http','$location','LanguageS
             $scope.output = response.data.output;
             $scope.status = response.data.statusCode;
             console.log(status);
+            $scope.buttons = true;
             $scope.spinner = false;
             $scope.results = true;
+            for(i = 0; i < $scope.output.length; i++){
+                $scope.codeOutput += $scope.output[i] + "\n";
+            }
+            for(i = 0; i < $scope.errors.length; i++){
+                $scope.codeOutput += $scope.errors[i] + "\n";
+            }
+            $scope.CodeMirrorOptionsTEST = {
+                mode: LanguageService.getLanguage(),
+                lineNumbers: true,
+                theme: "material",
+                readOnly: true
+            };
         });
 
     };
