@@ -175,7 +175,7 @@ app.config(function($routeProvider){
         });
 });
 
-/*app.run( function($rootScope, $location,userService) {
+app.run( function($rootScope, $location,userService) {
 
     // register listener to watch route changes
     $rootScope.$on( "$routeChangeStart", function(event, next, current) {
@@ -236,4 +236,4 @@ app.config(function($routeProvider){
         }
 
     });
-});*/
+});
