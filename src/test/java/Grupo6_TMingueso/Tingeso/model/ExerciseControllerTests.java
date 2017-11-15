@@ -1,9 +1,12 @@
-package Grupo6_TMingueso.Tingeso.controllers;
+package Grupo6_TMingueso.Tingeso.model;
 
+import Grupo6_TMingueso.Tingeso.controllers.ExerciseController;
 import Grupo6_TMingueso.Tingeso.models.Student;
 import org.junit.Assert;
 import org.junit.Test;
 import Grupo6_TMingueso.Tingeso.models.Exercise;
+import Grupo6_TMingueso.Tingeso.models.Teacher;
+import Grupo6_TMingueso.Tingeso.models.Coordination;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -29,10 +32,13 @@ public class ExerciseControllerTests {
     @Test
     public void CreateExerciseTest(){
 
+        Teacher profe = new Teacher();
         Exercise test = new Exercise();
         test.setTitle("New Exercise");
         test.setText("Try and solve this very hard problem");
         test.setAnswer("one");
+        test.setId_exercise(1);
+        test.setTeacher(profe);
 
         Assert.assertNotNull(test);
     }
@@ -41,13 +47,14 @@ public class ExerciseControllerTests {
     public void NewStudent(){
 
         Student student = new Student();
+        Coordination coordinator = new Coordination();
         student.setEmail("estudiante1@gmail.com");
         student.setLastName("Estudiante");
         student.setName("Hola");
         student.setRut("123456789");
         student.setPassword("lalallaa");
-
-
+        student.setCoordination(coordinator);
+        student.setStudent_id(1);
 
         Assert.assertNotNull(student);
     }
@@ -56,18 +63,24 @@ public class ExerciseControllerTests {
     public void NewExercisesAndNewStudent(){
 
         Student student = new Student();
+        Coordination coordinator = new Coordination();
         student.setEmail("estudiante1@gmail.com");
         student.setLastName("Estudiante");
         student.setName("Hola");
         student.setRut("123456789");
         student.setPassword("lalallaa");
+        student.setCoordination(coordinator);
+        student.setStudent_id(1);
 
         Assert.assertNotNull(student);
 
         Exercise test = new Exercise();
+        Teacher profe = new Teacher();
         test.setTitle("New Exercise");
         test.setText("Try and solve this very hard problem");
         test.setAnswer("one");
+        test.setId_exercise(1);
+        test.setTeacher(profe);
 
         Assert.assertNotNull(test);
     }

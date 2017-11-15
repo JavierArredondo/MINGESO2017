@@ -1,8 +1,9 @@
-package Grupo6_TMingueso.Tingeso.controllers;
+package Grupo6_TMingueso.Tingeso.model;
 
 /**
  * Created by mario on 25-10-17.
  */
+import Grupo6_TMingueso.Tingeso.models.Coordination;
 import Grupo6_TMingueso.Tingeso.models.Student;
 import org.junit.Assert;
 import org.junit.Test;
@@ -23,11 +24,14 @@ public class StudentControllerTests {
     public void NewStudent(){
 
         Student student = new Student();
-        student.setEmail("estudiante1@gmail.com");
-        student.setLastName("Estudiante");
+        Coordination coordinator = new Coordination();
+        student.setEmail("estudiante2@gmail.com");
+        student.setLastName("Estudiantes");
         student.setName("Hola");
-        student.setRut("123456789");
-        student.setPassword("lalallaa");
+        student.setPassword("lalallaalala");
+        student.setRut("1918188970");
+        student.setCoordination(coordinator);
+        student.setStudent_id(1);
 
         Assert.assertNotNull(student);
     }
