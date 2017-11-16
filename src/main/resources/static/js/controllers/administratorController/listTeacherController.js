@@ -12,7 +12,11 @@ app.controller('listTeacherController', ['$scope','$http','$location', function(
     		});
     	};
     $scope.delTeacher = function(id) {
-      	$http.delete('http://localhost:1919/teacher/' + id).then(function(data) {});
-        window.location.reload();
+      	$http.delete('http://localhost:1919/teacher/' + id).then(function(data) {
+          $http.get('http://localhost:1919/teacher/allTeachers').then(function(data) {
+      			$scope.teachers = data.data;
+      		});
+        });
+
       };
 }]);

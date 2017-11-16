@@ -129,7 +129,7 @@ app.config(function($routeProvider){
                     controller: 'homeAdministratorController'
         })
 
-        .when('/administrator/modifyCoordinator',{
+        .when('/administrator/modifyCoordinator/:idCoordinator',{
                     templateUrl: 'js/views/administrator/modifyCoordinator.html',
                     controller: 'modifyCoordinatorController'
         })

@@ -12,8 +12,18 @@ app.controller('listCoordinatorController', ['$scope','$http','$location', funct
     		});
     	};
     $scope.delCoordinator = function(id) {
-      	$http.delete('http://localhost:1919/teacher/' + id).then(function(data) {});
-        window.location.reload();
+      	$http.delete('http://localhost:1919/teacher/' + id).then(function(data) {
+          $http.get('http://localhost:1919/teacher/allCoordinares').then(function(data) {
+      			$scope.coordinares = data.data;
+      		});
+        });
       };
+    $scope.goTo2 = function(idCoordinator) {
+      $location.url('/administrator/modifyCoordinator/' + idCoordinator);
+    };
+
+    $scope.hola = function(){
+      console.log("hola");
+    };
 
 }]);

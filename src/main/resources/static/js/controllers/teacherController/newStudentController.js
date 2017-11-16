@@ -4,19 +4,17 @@ app.controller('newStudentController', ['$scope','$http','$location', function($
     $scope.addStudent = function() {
         var d =
             {
-                "name": $scope.name,
+                "name": $scope.nameUser,
                 "lastName": $scope.lastName,
                 "rut": $scope.rut,
-                "email": $scope.email,
-                "password": $scope.password
+                "email": $scope.email
                 //"id_coordination": $scope.id_coordination
             };
         $http.post('http://localhost:1919/student/new', d).then(function (data) {
             window.alert("Alumno agregado correctamente.");
-            $scope.name = "";
+            $scope.nameUser = "";
             $scope.rut = "";
             $scope.email = "";
-            $scope.password = "";
             $scope.lastName = "";
         }).catch(function (data) {
             window.alert("Se ha producido un error.");

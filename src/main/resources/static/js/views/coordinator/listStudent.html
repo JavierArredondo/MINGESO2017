@@ -15,7 +15,7 @@
                     <td> {{ student.lastName }} </td>
                     <td> {{ student.email }} </td>
                     <td><button type="button" class="btn btn-warning" ng-click="go('/administrator/modifyUser')"> Modificar </button>
-                        <button type="button" class="btn btn-danger"> Eliminar </button>
+                        <button type="button" class="btn btn-danger" ng-click="delStudent(student.student_id)"> Eliminar </button>
                     </td>
                 </tr>
             </table>

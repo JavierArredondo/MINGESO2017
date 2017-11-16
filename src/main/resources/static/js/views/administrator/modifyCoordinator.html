@@ -4,13 +4,13 @@
             <form method="POST">
                 <div class="panel panel-default">
                     <div class="panel-heading"><h2>Modificar Coordinador</h2></div>
-                    <div class="panel-body">
+                    <div class="panel-body" id="content" ng-controller="modifyCoordinatorController" ng-init="getCoordinator()" ng-show="coordinator != null">
                         <!-- Data of the student -->
                         <!-- First row: Name and lastname -->
                         <div class="form-group row">
                             <div class="col-md-6">
                                 <label> Nombre: </label>
-                                <input type="text" id = "name" ng-model="name" class="form-control">
+                                <input type="text" id = "nameUser" ng-model="nameUser" class="form-control">
                             </div>
                             <div class="col-md-6">
                                 <label> Apellidos: </label>
@@ -49,8 +49,8 @@
                         </div>-->
                     </div>
                     <div class="panel-footer">
-                        <input class="btn btn-primary" type="button" value="Guardar cambios">
-                        <input class="btn btn-primary" type="button" ng-click="go('/administrator/listCoordinator')" value="Cancelar">
+                        <input class="btn btn-primary" type="sumbit" ng-click="updateCoordinator()" value="Guardar cambios">
+                        <input class="btn btn-primary" type="sumbit" ng-click="go('/administrator/listCoordinator')" value="Cancelar">
                     </div>
                 </div>
             </form>
