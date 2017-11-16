@@ -17,12 +17,6 @@ import java.util.Set;
 @DataJpaTest
 public class CoordinationTest {
 
-    @Autowired
-    private TestEntityManager entityManager;
-
-    @Autowired
-    private ExerciseController Repo;
-
     @Test
     public void CreateCoordinationTest(){
 

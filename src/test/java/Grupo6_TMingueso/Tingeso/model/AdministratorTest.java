@@ -14,12 +14,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 @DataJpaTest
 public class AdministratorTest {
 
-    @Autowired
-    private TestEntityManager entityManager;
-
-    @Autowired
-    private ExerciseController Repo;
-
     @Test
     public void CreateAdministratorTest(){
 
