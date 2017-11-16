@@ -6,6 +6,7 @@ import Grupo6_TMingueso.Tingeso.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import sun.java2d.pipe.OutlineTextRenderer;
 
 @RestController
 @RequestMapping(path = "/student")
@@ -37,6 +38,7 @@ public class StudentController {
     @RequestMapping(path ="/new",method = RequestMethod.POST)
     public Integer CreateStudent(@RequestBody Student student){
         student.setPassword("1");
+        //System.out.println(student.getName());
         studentRepository.save(student);
         return 1;
     }

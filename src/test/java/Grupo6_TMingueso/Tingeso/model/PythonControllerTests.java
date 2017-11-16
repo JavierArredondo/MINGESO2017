@@ -1,4 +1,6 @@
-/*package Grupo6_TMingueso.Tingeso.controllers;
+/*
+package Grupo6_TMingueso.Tingeso.model;
+import Grupo6_TMingueso.Tingeso.controllers.PythonController;
 import Grupo6_TMingueso.Tingeso.models.Python;
 
 import static org.junit.Assert.assertEquals;
