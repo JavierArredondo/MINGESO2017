@@ -11,12 +11,8 @@ app.controller('listStudentController', ['$scope','$http','$location', function(
     		});
     	};
     $scope.delStudent = function(id) {
-        console.log("holita");
       	$http.delete('http://localhost:1919/student/' + id).then(function(data) {});
         window.location.reload();
 
-      };
-      $scope.hola = function() {
-        console.log("holaassa");
       };
 }]);

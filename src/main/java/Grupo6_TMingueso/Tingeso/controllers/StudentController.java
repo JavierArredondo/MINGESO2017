@@ -17,7 +17,7 @@ public class StudentController {
 
 
     //metodo que retorna un estudiante de acuerdo a su id
-    
+
     @GetMapping(path = "/{id}")
     public @ResponseBody Student getStudent(@PathVariable("id") Integer id){
         long lid = id.longValue();
@@ -36,6 +36,7 @@ public class StudentController {
 
     @RequestMapping(path ="/new",method = RequestMethod.POST)
     public Integer CreateStudent(@RequestBody Student student){
+        student.setPassword("1");
         studentRepository.save(student);
         return 1;
     }

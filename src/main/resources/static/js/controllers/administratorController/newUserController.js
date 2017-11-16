@@ -22,4 +22,32 @@ app.controller('newUserController', ['$scope','$http','$location', function($sco
         }
     };
 
+    $scope.addUser = function() {
+        var direccion;
+        var datos =
+            {
+                "name": $scope.nameUser,
+                "lastName": $scope.lastName,
+                "rut": $scope.rut,
+                "email": $scope.email
+            };
+        if($scope.check)
+        {
+          direccion = '/teacher/newCoordinator';
+        }
+        else
+        {
+          direccion = '/teacher/newTeacher';
+        }
+        $http.post(direccion, datos).then(function (data) {
+            window.alert("Agregado correctamente.");
+            $scope.nameUser = "";
+            $scope.rut = "";
+            $scope.email = "";
+            $scope.lastName = "";
+        }).catch(function (data) {
+            window.alert("Se ha producido un error.");
+        })
+    };
+
 }]);

@@ -120,4 +120,8 @@ public class Teacher implements Serializable {
     public void setIs_admin(Boolean is_admin) {
         this.is_admin = is_admin;
     }
+
+    public void addCoordination(Coordination coor){
+      this.coordinations.add(coor);
+    }
 }

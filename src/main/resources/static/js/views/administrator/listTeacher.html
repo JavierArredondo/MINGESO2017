@@ -12,7 +12,7 @@
               </tr>
               <tr ng-repeat="teacher in teachers">
                   <td> {{ teacher.name }} </td>
-                  <td> {{ teacher.last_name }} </td>
+                  <td> {{ teacher.lastName }} </td>
                   <td> {{ teacher.email }} </td>
                   <td><button type="button" class="btn btn-warning"> Modificar </button>
                       <button type="button" class="btn btn-danger" ng-click="delTeacher(teacher.id_teacher)"> Eliminar </button>
@@ -20,7 +20,7 @@
               </tr>
             </table>
 
-
+          </div>
         <div class="panel-footer">
             <input class="btn btn-info btn-lg" type="button" ng-click="go('/administrator/home')" value="Atras">
         </div>

@@ -9,6 +9,10 @@ app.controller('listStudentController', ['$scope','$http','$location', function(
     $scope.getStudents = function() {
     		$http.get('http://localhost:1919/student/all').then(function(data) {
     			$scope.students = data.data;
-    		});	
+    		});
     	};
+    $scope.delStudent = function(id) {
+        $http.delete('http://localhost:1919/student/' + id).then(function(data) {});
+        window.location.reload();
+      };
 }]);
