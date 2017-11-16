@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 
+import javax.validation.constraints.Null;
+
 /**
  * Created by mario on 25-10-17.
  */
@@ -30,6 +32,9 @@ public class SolutionTest {
         solution.setAnswer("upsupsups");
         solution.setId_solution(1);
         solution.setStudent(student);
+        solution.setId_wordind_doc(5);
+        solution.setStart_date(null);
+        solution.setEnd_date(null);
 
         Assert.assertNotNull(solution);
     }

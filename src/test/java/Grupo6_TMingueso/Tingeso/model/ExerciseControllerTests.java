@@ -1,12 +1,9 @@
 package Grupo6_TMingueso.Tingeso.model;
 
 import Grupo6_TMingueso.Tingeso.controllers.ExerciseController;
-import Grupo6_TMingueso.Tingeso.models.Student;
+import Grupo6_TMingueso.Tingeso.models.*;
 import org.junit.Assert;
 import org.junit.Test;
-import Grupo6_TMingueso.Tingeso.models.Exercise;
-import Grupo6_TMingueso.Tingeso.models.Teacher;
-import Grupo6_TMingueso.Tingeso.models.Coordination;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -17,6 +14,10 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import static org.assertj.core.api.Assertions.*;
 import Grupo6_TMingueso.Tingeso.models.Exercise;
 import Grupo6_TMingueso.Tingeso.repository.repo.ExerciseRepo;
+
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created by mario on 25-10-17.
  */
@@ -29,16 +30,42 @@ public class ExerciseControllerTests {
     @Autowired
     private ExerciseController Repo;
 
-    @Test
-    public void CreateExerciseTest(){
+    public Student ProofStudent (){
 
-        Teacher profe = new Teacher();
+        Set<Solution> solutions = new HashSet<>();
+        Student student = new Student();
+        Coordination coordinator = new Coordination();
+        student.setEmail("estudiante1@gmail.com");
+        student.setLastName("Estudiante");
+        student.setName("Hola");
+        student.setRut("123456789");
+        student.setPassword("lalallaa");
+        student.setCoordination(coordinator);
+        student.setSolutions(solutions);
+        student.setTotal_wordings(5);
+        student.setStudent_id(1);
+        student.setTotal_spend_time(5);
+
+        return student;
+    }
+
+    public Exercise ProofExercises (){
+
+        Teacher teacher = new Teacher();
         Exercise test = new Exercise();
         test.setTitle("New Exercise");
         test.setText("Try and solve this very hard problem");
         test.setAnswer("one");
         test.setId_exercise(1);
-        test.setTeacher(profe);
+        test.setTeacher(teacher);
+
+        return test;
+    }
+
+    @Test
+    public void CreateExerciseTest(){
+
+        Exercise test = ProofExercises();
 
         Assert.assertNotNull(test);
     }
@@ -46,15 +73,7 @@ public class ExerciseControllerTests {
     @Test
     public void NewStudent(){
 
-        Student student = new Student();
-        Coordination coordinator = new Coordination();
-        student.setEmail("estudiante1@gmail.com");
-        student.setLastName("Estudiante");
-        student.setName("Hola");
-        student.setRut("123456789");
-        student.setPassword("lalallaa");
-        student.setCoordination(coordinator);
-        student.setStudent_id(1);
+        Student student = ProofStudent();
 
         Assert.assertNotNull(student);
     }
@@ -62,27 +81,12 @@ public class ExerciseControllerTests {
     @Test
     public void NewExercisesAndNewStudent(){
 
-        Student student = new Student();
-        Coordination coordinator = new Coordination();
-        student.setEmail("estudiante1@gmail.com");
-        student.setLastName("Estudiante");
-        student.setName("Hola");
-        student.setRut("123456789");
-        student.setPassword("lalallaa");
-        student.setCoordination(coordinator);
-        student.setStudent_id(1);
+        Student student = ProofStudent();
 
-        Assert.assertNotNull(student);
-
-        Exercise test = new Exercise();
-        Teacher profe = new Teacher();
-        test.setTitle("New Exercise");
-        test.setText("Try and solve this very hard problem");
-        test.setAnswer("one");
-        test.setId_exercise(1);
-        test.setTeacher(profe);
+        Exercise test = ProofExercises();
 
         Assert.assertNotNull(test);
+        Assert.assertNotNull(student);
     }
 
 }
