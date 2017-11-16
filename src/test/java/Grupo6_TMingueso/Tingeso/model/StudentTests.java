@@ -27,8 +27,8 @@ public class StudentTests {
         student.setRut("1918188970");
         student.setCoordination(coordinator);
         student.setStudent_id(1);
-        student.setTotal_spend_time(1);
-        student.setTotal_wordings(1);
+        student.setTotal_spend_time(3);
+        student.setTotal_wordings(5);
         student.setSolutions(solutions);
 
         Assert.assertNotNull(student);
